@@ -1,0 +1,573 @@
+
+Buscar en el vídeo
+0:00
+Hola hoy vamos a compilar nuestro primer
+0:04
+programa cool como vamos qué vamos a ver
+0:08
+en este videoo el jcl para poder
+0:11
+compilar una explicación de los
+0:13
+fundamentos del jcl
+0:17
+eh la generación de un dataset para
+0:20
+poder contener el programa objeto que
+0:23
+después vamos a
+0:25
+ejecutar bueno opción dos editar eh con
+0:30
+el software ya que les
+0:32
+entregué venía una librería llamada
+0:36
+curso uno pero bueno la pudieron estar
+0:39
+modificando generando otra yo voy a dar
+0:42
+el ejemplo sobre la librería que vino
+0:47
+configurada ya en el Hércules que
+0:50
+hicieron
+0:51
+dar como podemos ver Acá tengo la
+0:55
+librería curso un con un grupo lip de
+1:00
+librerías y u tipo source si yo doy
+1:05
+enter me va a
+1:08
+traer los dos
+1:12
+eh Job que tengo
+1:15
+en dentro de la categoría source es
+1:19
+decir tenemos un jcl vamos a
+1:23
+editarlo que luego daremos alguna que
+1:26
+otra aplicación es este que tiene la
+1:30
+característica de acá donde ven en El
+1:33
+Paso un
+1:34
+[Música]
+1:35
+elec este nombre yig y w o w como sea
+1:42
+para según el país c LG es una
+1:48
+compilación que va a la c las tres
+1:52
+últimas letras la c de compilar la l es
+1:56
+de linkar y la g es de go quiere decir
+2:00
+que en este Job vamos a copilar en que
+2:06
+editar y ejecutar las tres tareas
+2:09
+Mientras no haya errores Porque si yo en
+2:12
+el primer paso de cuando va a leer el
+2:16
+jcl encuentra un error no va va a cortar
+2:20
+ahí mismo el trabajo del Job si
+2:23
+encuentra un error en la compilación un
+2:26
+error fatal también va a cortar es decir
+2:28
+tiene que pasar los dos primeros pasos
+2:31
+para después link
+2:33
+editar y que nosotros podamos link
+2:37
+editar ejecutar y que podamos ver el
+2:39
+resultado así que tenemos este
+2:42
+y vamos a ver que también tenemos el
+2:46
+programa más simple que existe que es
+2:49
+nuestra primera compilación lo vamos a
+2:51
+editar Es simple tiene seis líneas nada
+2:57
+más sí eh Y lo único que va a hacer es
+3:01
+un Welcome to curso uno H Yo acá Tengo
+3:05
+estos dos números de secuencia que son
+3:08
+las seis primeras posiciones para para
+3:11
+guiarme nada más y acá tengo un
+3:14
+comentario con un asterisco donde me
+3:18
+referenci a la columna 12 es decir que
+3:22
+estas tres primeras líneas que son
+3:25
+identification division programming y
+3:28
+procedure division están en la columna
+3:30
+8o y en la 12 están las dos sentencias
+3:36
+de ejecución el display y el Stop
+3:39
+r Bueno qué pasa que que para
+3:44
+poder ejecutar este Job nos falta una
+3:48
+librería que es la
+3:51
+librería de fuentes eh Porque si
+3:55
+nosotros observamos el Job control el
+4:00
+jlc vamos a abrirlo otra
+4:03
+vez con
+4:07
+Ed vemos que
+4:11
+tiene un paso cero que es el que le
+4:16
+estuve explicando que va a lanzar este
+4:18
+utilitario que va a compilar link editar
+4:21
+y
+4:23
+ejecutar ya les explicaré Qué significa
+4:26
+el cin de cobol
+4:30
+y hay un paso llamado Step lip que
+4:33
+podría llamarse como este llama este
+4:36
+cero este podría llamarse 1 o t 99 lo
+4:41
+que sea que el
+4:45
+resultado de la compilación total lo va
+4:49
+a dejar en un dataset llamado lo se llm
+4:53
+lo al porque yo decidí llamarlo cada uno
+4:57
+lo va a llamar como quiera
+5:00
+y dentro de lo va a dejar Pro 1 que es
+5:05
+el nombre del
+5:07
+programa Entonces nos va a faltar dentro
+5:12
+de el proyecto curso un o librería curso
+5:17
+un dentro de lip un dataset que se llama
+5:22
+loal lip que es un dataset muy especial
+5:26
+y ahora vamos a ver cómo se Define Bueno
+5:30
+antes de proseguir ya y para definir el
+5:34
+dataset vamos a aclarar algunas cositas
+5:38
+bueno los alumnos inscritos en el curso
+5:41
+van a recibir toda la documentación como
+5:43
+siempre paso a paso y con las
+5:45
+explicaciones correspondientes de todo
+5:48
+lo que estamos viendo Este primer Job
+5:51
+que vamos a ejecutar va a terminar bien
+5:54
+Es decir lo que ven siempre en internet
+5:57
+y en los blogs que hay de enseñanza de
+6:00
+cobol que siempre los programas terminan
+6:02
+bien bueno en este caso este primero va
+6:05
+a terminar bien pero después van a
+6:07
+terminar mal y entonces vamos a tener
+6:09
+que ver por qué terminan mal y cuáles
+6:12
+son alguno alguno de los errores que se
+6:15
+cometen habitualmente lo principal es
+6:18
+Cómo buscar el problema
+6:20
+eh otra aclaración es que yo estoy
+6:23
+siguiendo un camino determinado
+6:25
+partiendo desde el
+6:28
+ispf pero sabemos que podemos llegar al
+6:32
+mismo lugar por diferentes caminos yo
+6:35
+estoy dirigiendo el camino más simple
+6:37
+para que me comprendan tal vez el más
+6:40
+cómodo para mí
+6:41
+también acá cuando aclaramos que este
+6:45
+utilitario nos va a permitir compilar
+6:48
+link editar y ejecutar Bueno hay también
+6:52
+un utilitario que comienza con las
+6:56
+mismas letras que nos permite nada más
+6:59
+que compilar Y luego podemos link editar
+7:03
+de una manera y ejecutar de otra manera
+7:05
+es decir como primer ejemplo yo elegí
+7:09
+los tres pasos en un solo Job pero
+7:13
+ustedes pueden hacer un y para compilar
+7:15
+otro para link editar
+7:18
+eh qué otra
+7:20
+aclaración bueno los videos trato de
+7:24
+hacerlo lo más corto posible Así que
+7:27
+vamos a continuar con este ya definiendo
+7:31
+el
+7:32
+dataset para crear el dataset vamos a ir
+7:36
+a utilities y dentro de utility vamos a
+7:39
+elegir la opción dos ya saben que
+7:43
+podemos ir directamente tipeando el
+7:50
+tres donde después podemos elegir la
+7:53
+opción dos dataset que permite alocar
+7:57
+renombrar deletear
+8:00
+pero
+8:01
+también podíamos haber ido directamente
+8:05
+por el camino corto diciendo que vamos a
+8:08
+la opción número dos dentro de la opción
+8:11
+número TR y ahí nos va a
+8:15
+traer lo que yo tengo seteado en este
+8:18
+momento pero acá podrían encontrar
+8:21
+cualquier otra
+8:22
+librería entonces
+8:25
+tengo si
+8:27
+encuentran otro no
+8:32
+nombre que fuera lo único que que hacer
+8:35
+venir AC y que corresponde en
+8:40
+grupo estar todo dentro del y acá
+8:44
+entonces voy a crear un dataset que como
+8:49
+vimos se va llamar
+9:02
+Entonces como vamos a alocar un
+9:10
+dataset y acá nos trae la pantalla donde
+9:14
+vamos a alocar El dataset Bueno como ya
+9:18
+esto yo lo había hecho me vienen ustedes
+9:22
+tienen que tomar todo los parámetros por
+9:24
+default pero
+9:27
+aquí esto es lo más importante es decir
+9:31
+que tiene que haber una u de registro
+9:37
+indefinido todos los dataset que alojan
+9:41
+objeto tienen que tener una u tiene que
+9:46
+ser indefinido y el record l que viene
+9:49
+por defecto tiene que ser 80 pero contró
+9:53
+lo de que esté en 80 todos los demás
+9:58
+valores los pueden dejar por defecto y
+10:01
+al darle
+10:03
+[Música]
+10:04
+enter ya tiene que haber
+10:07
+creado el dataset
+10:10
+lo para eso ya saben hay varios caminos
+10:15
+para
+10:17
+confirmar Cómo podemos comprobarlo vamos
+10:20
+a entrar por el camino corto o largo a
+10:23
+la opción
+10:26
+3.4 acá tenemos el nombre
+10:31
+el
+10:31
+des y vamos a ver todo el contenido Está
+10:36
+correcto curso un Y entonces ahora
+10:39
+tenemos una
+10:41
+librería esta no cuenta para nosotros
+10:45
+las que nos interesan son estas
+10:47
+dos Entonces tenemos una nueva librería
+10:50
+que es
+10:53
+lo habiendo definido dataset vamos a
+10:56
+compilar vamos a entrar por el camino
+10:58
+por por
+11:02
+3.4 aquí tenemos ya el nombre de la
+11:07
+librería donde nos va a aparecer el
+11:09
+contenido de toda la
+11:11
+librería tenemos el lal que acabamos de
+11:14
+definir el dataset ahora lo que nos
+11:17
+interesa es editar la librería de
+11:22
+sus donde vamos a encontrar el programa
+11:26
+como ya vimos y el jcl e Vamos a entrar
+11:30
+al
+11:33
+jcl verificamos que es el que nos
+11:35
+corresponde y lo vamos a submitir
+11:38
+submitir quiere decir mandarlo a la cola
+11:41
+de ejecución se puede mandar con la
+11:44
+palabra
+11:46
+submit toda completa o con su
+11:50
+abreviatura
+11:53
+sub nos dice que el Job fue
+11:57
+subiti damos enter y acá nos dice el
+12:02
+código de error al estar en cero maxc
+12:06
+están en cer quiere decir que no hubo
+12:08
+ningún error si aparece un cuatro es un
+12:12
+Warning un comentario el programa se
+12:15
+ejecuta Igualmente ya si aparece un ocho
+12:18
+o valores arriba de ocho que después lo
+12:21
+vamos a ver es que ya son errores
+12:24
+fatales y no se puede ejecutar bueno en
+12:27
+este caso como les había anticipado va a
+12:29
+ser
+12:30
+exitoso vamos a comprobar entonces la
+12:35
+salida
+12:37
+Si
+12:38
+cumplió el
+12:41
+cometido bueno para eso tenemos que
+12:44
+entrar al
+12:46
+sdsf que es donde están todas las colas
+12:50
+de ejecución y de spull digamos del
+12:53
+sistema se puede entrar con la m para
+12:57
+buscar
+12:59
+el sdf que sería la opción
+13:03
+5 como
+13:06
+ven o vamos a retroceder se puede entrar
+13:11
+por el camino corto es decir
+13:14
+1.5 en esta configuración en otro en
+13:18
+otras configuraciones el sdf lo tendrán
+13:21
+que buscar
+13:22
+e en las opciones del menú Bueno vamos a
+13:26
+entrar y a nosotros lo que nos interesa
+13:30
+es ir a la cola de op por qué
+13:33
+op porque ahí es donde tendría que estar
+13:36
+el resultado como no hubo errores los
+13:39
+vamos a tener que encontrar con una
+13:43
+o
+13:47
+entramos hay una manera de entre todo
+13:51
+este Magnum de Job de encontrarlo con un
+13:55
+f Pero bueno Nosotros sabemos que el
+13:57
+nuestro es el último porque fue el
+14:00
+último ejecutado y acá tenemos con f8
+14:05
+hemos bajado hasta el final de toda la
+14:08
+cola y vemos que tenemos dos
+14:11
+Job curso 1
+14:14
+jcl JC que es el que nos interesó a
+14:18
+nosotros
+14:20
+Entonces el que tiene un uno podemos
+14:24
+verificar los dos por supuesto en este
+14:26
+caso tiene un uno porque eso quiere
+14:28
+decir que tiene una línea sola Por qué
+14:31
+tiene una línea sola Bueno cómo entramos
+14:33
+a ver el contenido con un signo de
+14:37
+interrogación en la línea de comandos a
+14:41
+izquierda y acá tenemos el sis que si
+14:45
+recuerdan en el jcl era donde dijimos
+14:48
+que íbamos a dejar toda la salida ahí
+14:52
+ponemos una letra s de show y vemos
+14:56
+Welcome to curso la única línea
+14:59
+empresa que es lo que pretendíamos hacer
+15:03
+con el
+15:03
+programa Si volvemos por
+15:07
+atrás también podemos
+15:12
+editar
+15:13
+Ah
+15:15
+perdón AC
+15:22
+poner Y entonces aquí lo que vamos a ver
+15:25
+es el resultado de la combinación cobol
+15:30
+y el resultado de la link edición Pero
+15:33
+bueno eso lo vamos a dejar para más
+15:40
+adelante como
+15:42
+verán acá tenemos todo resultado de la
+15:45
+compilación con f8 con la línea para
+15:49
+ralizar podemos ir viendo pero esto lo
+15:53
+vamos a ver ahora cuando compilamos y
+15:56
+vemos que tengamos errores es decir en
+15:58
+el próximo video Este ya se hizo muy
+16:00
+largo Bueno hasta el próximo
+

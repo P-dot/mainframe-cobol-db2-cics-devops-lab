@@ -1,0 +1,26 @@
+LAB COBOL/JCL - APUNTES PARA IBMUSER.HARDEN.CNTL
+
+1. Librerias creadas:
+   IBMUSER.COBOL.SRC  -> fuentes COBOL, PDS, FB 80.
+   IBMUSER.COBOL.LOAD -> modulos ejecutables, PDS, RECFM=U.
+
+2. JCL principal:
+   IBMUSER.ML.JCL(CRCOBOL)  -> crea SRC y LOAD.
+   IBMUSER.ML.JCL(CMPHELLO) -> compila/link-edita/ejecuta HELLO.
+   IBMUSER.ML.JCL(CMPARM)   -> compila/link-edita PARMES.
+   IBMUSER.ML.JCL(RUNPARM)  -> ejecuta PARMES con SYSIN.
+
+3. COBOL:
+   HELLO  -> DISPLAY simple.
+   PARMES -> ACCEPT desde SYSIN y DISPLAY hacia SYSOUT.
+
+4. Diagnostico:
+   JOB NOT RUN -> revisar JESJCL/JESYSMSG.
+   STEPLIB DATA SET NOT FOUND -> revisar librerias reales del compilador.
+   Error columna 7 COBOL -> revisar formato fijo y columnas.
+   CC 0000 -> confirmar resultado en SYSOUT.
+
+5. Regla administrativa:
+   Separar SOURCE, LOAD, JCL, REPORTS y BACKUP.
+   No tocar SYS1.*.
+   Corregir una sola causa por iteracion.

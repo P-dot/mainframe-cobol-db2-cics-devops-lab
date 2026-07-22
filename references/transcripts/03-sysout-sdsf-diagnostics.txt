@@ -1,0 +1,696 @@
+
+Buscar en el vídeo
+0:00
+Hola a todos Bueno tal como quedamos en
+0:03
+el video anterior donde vimos
+0:06
+ejecuciones sin error esta vez vamos a
+0:10
+ver un un poco más completo pero vamos a
+0:14
+depurar errores tanto de jcl como de
+0:18
+cobol Así que pasemos a una explicación
+0:23
+muy breve antes de entrar a la
+0:27
+práctica entraremos a ispf como ya vimos
+0:32
+por la opción
+0:34
+m.
+0:35
+o
+0:37
+ispf m y luego la opción 5 camino corto
+0:43
+es m. 5 bueno esto ya lo habíamos visto
+0:48
+una vez que estamos en
+0:50
+m5 se activará esta pantalla que tiene
+0:55
+todos estos comandos para
+0:58
+poder accer
+1:00
+a la administración de colas de trabajo
+1:03
+y a la verificación de trabajo Bueno
+1:06
+Este es el tema que no se interesa vamos
+1:09
+a ver un resumen atacando
+1:12
+directamente los comandos que a nosotros
+1:15
+nos interesan para depurar
+1:17
+errores son los siguientes de a que es
+1:22
+la primera opción que van a encontrar No
+1:24
+la vamos a usar Pero bueno muestra los
+1:28
+trabajos que ente están en ejecución por
+1:31
+la manera que tenemos nosotros de
+1:33
+encarar el curso y de lanzar los
+1:36
+trabajos Siempre vamos a lanzar un
+1:38
+trabajo y cuando lo querramos verificar
+1:42
+ya estará
+1:43
+terminado lo mismo pasará con la opción
+1:46
+de input que muestra la cola de trabajo
+1:49
+en espera de ser ejecutado Bueno pero
+1:51
+aunque no los usemos es bueno que sepan
+1:54
+para qué está acá s hay una opción que
+1:57
+vamos a usar habitualmente decir la
+2:00
+opción o que muestra las salidas de
+2:04
+trabajos
+2:06
+ejecutados Entonces qué pasa si nosotros
+2:09
+tenemos un trabajo con cero error o con
+2:15
+un Warning si no nos interesa ver cuál
+2:18
+es el Warning podemos ir directamente a
+2:21
+la opción o porque es la que nos va a
+2:24
+mostrar la salida ya terminada Si
+2:28
+queremos Ya empezar ver primero porque
+2:31
+se produjo un error un error fatal que
+2:34
+no nos deja ejecutar o queremos depurar
+2:37
+un Warning bueno Tendremos que entrar
+2:40
+más que nada por la opción
+2:42
+St status de Play que muestra la lista
+2:47
+de trabajo en ejecución en cola o
+2:49
+completado en esta es la pantalla
+2:52
+principal donde puede ver el estado de
+2:54
+los trabajos opcionalmente podemos ver
+2:57
+algo en la opción H eh que sirve para
+3:00
+ver la salida jada que ha dejado un
+3:04
+proceso terminado pero nosotros esto
+3:07
+aquí la opción
+3:10
+status es la que realmente nos va a
+3:14
+permitir depurar los errores después
+3:16
+tenemos una opción
+3:19
+seis que muestra el L del sistema donde
+3:22
+puedes ver mensaje relacionado con los
+3:25
+eventos del sistema eh vamos a volver a
+3:28
+ver el sl anterior es decir que sobre
+3:32
+todas estas
+3:33
+opciones nosotros vamos a mirar muy bien
+3:37
+la opción o
+3:39
+de que es la más simple de todas porque
+3:41
+es un trabajo que ha finalizado
+3:44
+correctamente y queremos ver la salida y
+3:47
+la opción St de status of para ver cuál
+3:52
+es el problema que tuvimos así que bueno
+3:55
+pasemos a la práctica Bueno vamos a ver
+3:58
+entonces
+4:01
+primero vamos a ver un ejemplo que
+4:04
+funciona
+4:06
+de con respecto a la clase anterior
+4:09
+nosotros Teníamos dos Job uno que
+4:27
+compilabile inedite y ejecute todo en un
+4:31
+solo trabajo Bueno vamos a
+4:35
+verlo acá el programa es el mismo es un
+4:40
+programa que lo único que hace es leer
+4:44
+el s para después
+4:47
+disar la única diferencia vamos a notar
+4:50
+en el Job para diferenciarlo con el
+4:54
+anterior el en vez de ser diciembre es
+4:58
+enero buen vamos a ver
+5:01
+Entonces ven el mes de diciembre acá
+5:04
+dice enero y Cuál es la principal
+5:07
+diferencia bueno en el Step un en El
+5:10
+Paso un hemos cambiado
+5:14
+hemos no lo hemos cambiado es decir
+5:16
+hemos dejado que compile y le inedite
+5:21
+por eso
+5:23
+elige y wcl l no tiene la aje final que
+5:28
+sería la de
+5:30
+Por qué por qué bueno porque vamos a
+5:33
+usar este método que después ejecute
+5:36
+para que pueda leer el parámetro y lo
+5:39
+pueda
+5:41
+imprimir Este es el que lo van a tener
+5:44
+en la
+5:46
+documentación para tener el ejemplo de
+5:49
+que en dos pasos vamos a ejecutar este
+5:52
+trabajo vamos a
+5:56
+submitir no dice que lo sumió
+6:00
+f3 no tiene
+6:03
+errores como ya le había
+6:05
+anticipado Entonces vamos a verificarlo
+6:08
+nada más y después vamos a cometer
+6:10
+errores tanto en el programa como en el
+6:13
+jcl para poderlo detectar vamos vamos
+6:17
+por atrás y nos vamos a la opción
+6:21
+m5 para
+6:25
+entrar aquí
+6:28
+estamos en el SD sf donde como
+6:34
+tuvimos cero de resultado es decir ni
+6:38
+siquiera un Warning vamos a entrar a la
+6:41
+opción o de
+6:44
+output vamos a hacer un
+6:47
+f del nombre del Job que lo
+6:54
+ejecuta como verán aparecen dos uno
+6:58
+anterior que había hecho yo y se dan
+7:00
+cuenta que es el anterior porque está
+7:02
+numerado y este es 942 la terminación y
+7:07
+este el
+7:08
+985 de paso les digo que si le molesta
+7:12
+tener
+7:13
+eh en los
+7:16
+spol mucha información porque ahora
+7:20
+tenemos dos ejecutas porquees Yo tengo
+7:22
+uno anterior pero a lo mejor podía tener
+7:24
+15 No lo sé una manera es
+7:27
+deletear con
+7:30
+purgar la letra
+7:32
+p purgamos en anterior nos pide la
+7:36
+confirmación que lo vamos a deletear no
+7:41
+refresca la pantalla en el momento pero
+7:43
+miren si regresamos para
+7:46
+atrás y otra vez entramos por output
+7:50
+letra
+7:52
+o Perdón es que me equivocado en vez de
+7:58
+poner Let
+8:00
+puse un cero F deine se puede poner la
+8:04
+palabra completa f i n f entonces
+8:08
+buscamos
+8:09
+el
+8:11
+ejecuta y ahora aparece una sola vez no
+8:14
+refresca la pantalla cuando hacemos el p
+8:18
+pero lo hace efectivo entonces con el
+8:23
+signo de interrogación de cierre Vamos a
+8:27
+entrar acá y tenemos
+8:30
+lo que queríamos ver que es el resultado
+8:33
+del sisau que con la la letra s de show
+8:39
+demostrar vamos a ver y como ven dice
+8:42
+enero cuando en el video anterior la
+8:46
+prueba era que acá decía diciembre bueno
+8:50
+ahora sí nos vamos a empezar a ver estos
+8:53
+mismos programa el programa cobol y el
+8:57
+Job con error
+9:00
+para verm
+9:03
+encontramos primero vamos a entrar acá a
+9:06
+la opción St que les quiero
+9:09
+[Música]
+9:11
+mostrar vamos a
+9:14
+haer
+9:16
+de ejecuta que lo he ejecutado varias
+9:19
+veces Entonces como verán acá me aparece
+9:22
+tres veces aunque pod parecer 10o
+9:29
+esta depuración de cero voy a enseñarles
+9:33
+Cómo purgar una lista ya directamente es
+9:38
+decir habíamos visto que poniendo una p
+9:41
+acá
+9:41
+podríamos purgar este elemento pero si
+9:45
+lo hacemos de esta manera que les voy a
+9:47
+mostrar barra barra
+9:50
+p hasta el
+9:53
+último poniendo una barra barra le estoy
+9:57
+diciendo
+10:00
+toda la lista que quiero purgar damos
+10:03
+enter me a pedir la
+10:07
+confirmación vuelve a aparecer por el
+10:10
+problema que les dije que no
+10:11
+refresca tiramos para atrás vamos a
+10:15
+entrar otra vez a
+10:17
+St Sí y ahora vamos a
+10:21
+hacer
+10:23
+ejecuta y ya nos dice que no no
+10:27
+existe así que cuando ahora ejecutemos
+10:31
+este Job va a tener que aparecer uno
+10:34
+solo en la
+10:36
+lista vamos a ir para atrás y vamos a
+10:39
+ejecutarlo como
+10:41
+corresponde
+10:43
+entramos por la opción dos
+10:46
+de entramos a la
+10:49
+librería el
+10:52
+miembro ejecuta es
+10:55
+este hacemos un sub
+11:02
+dice que lo
+11:03
+subiti
+11:06
+f3 error
+11:08
+12 error fatal Entonces vamos a ir a
+11:12
+buscar cuál es el el
+11:16
+error al ser un error
+11:19
+12 ya sabemos que es de compilación no
+11:22
+está diciendo que es un error del J
+11:24
+control de jcl sino que es un error de
+11:28
+compilación aquí sale 0 o cu que son
+11:32
+válidos 8 12 18 creo que es el otro que
+11:37
+son todos errores fatales Así que lo
+11:39
+tenemos que ir a buscar
+11:41
+[Música]
+11:44
+a vamos a entrar por
+11:49
+m5
+11:54
+St vamos a buscar el Job ejecuta
+12:01
+Y ves lo tenemos una sola vez porque
+12:05
+habíamos borrado todo entonces signo de
+12:09
+interrogación de
+12:11
+[Música]
+12:12
+cierre y como sabemos que es un error 12
+12:18
+y que es en el programa cobol lo que
+12:21
+vamos a hacer es
+12:23
+directamente ir acá alint que
+12:27
+dice lo vamos a mostrar con show y vamos
+12:34
+a ir recorriéndolo
+12:36
+Recuerden que las teclas son f8 para
+12:41
+avanzar F7 para retroceder
+12:46
+f11 para desplazarse hacia la derecha
+12:50
+f10 para desplazarse hacia la izquierda
+12:53
+con f8 vamos a ir
+12:56
+avanzando y acá ya nos
+13:01
+muestra la sentencia de
+13:05
+cobol y cuando llega
+13:08
+a la sentencia número 15 se interrumpe
+13:12
+la sucesión de impresión de Sentencia
+13:15
+porque es donde encontró el error y como
+13:18
+podrán ver acá dice displa enz de
+13:22
+display a propósito le quité la i Para
+13:26
+que vean Cómo se produce el error
+13:27
+entonces acá abajo
+13:30
+explicar error display es
+13:33
+inválido bueno va a saltear este verbo
+13:37
+demás bueno el tema es que así el
+13:40
+programa no va a funcionar y vemos cómo
+13:43
+encontrar el error en un
+13:46
+programa bueno vamos a ejecutar el J que
+13:49
+tiene un error un error real que me pasó
+13:52
+a mí y me costó bastante trabajo
+13:54
+encontrarlo Lamentablemente
+13:56
+con las herramientas
+14:00
+que te da zof Z
+14:04
+os es
+14:06
+bastante limitado para encontrar un
+14:08
+error en
+14:09
+jcl Pero bueno vamos a ver cómo lo
+14:13
+podemos hacer entonces este y tiene un
+14:16
+error que yo no lo podía ver a simple
+14:20
+vista lo voy a submitir porque lo acabo
+14:24
+de
+14:25
+Reproducir y me dice que hay un error
+14:29
+interno en el
+14:31
+jcl no me dice nada
+14:36
+más voy entonces
+14:39
+a m.
+14:44
+5 y voy a la opción
+14:51
+St vamos a
+14:58
+buscaro y acá lo tenemos solo porque he
+15:01
+limpiado los miembros que ya no quería
+15:04
+tener en el pool Eh
+15:10
+entonces interrogación
+15:12
+final y acá tenemos tres archivos H
+15:19
+donde mucha información no nos va a
+15:22
+aportar por ejemplo el primero de ellos
+15:25
+con show nada acá
+15:29
+lo único que podemos ver Es un error
+15:33
+297 y tendemos que dirigirnos a los
+15:36
+manuales y la documentación para ver
+15:39
+cuál es el error
+15:41
+297 Esto es lo más valioso que puede
+15:44
+aportar si nosotros entramos a la
+15:47
+segunda
+15:50
+opción acá tenemos el Job yo sé dónde
+15:55
+está el error pero
+15:59
+por eso mismo me doy
+16:01
+cuenta que no me aporta absolutamente
+16:04
+nada por lo menos para
+16:07
+mí porque no me está
+16:10
+relatando ningún tipo de error si todo
+16:13
+el desarrollo interno que tiene él para
+16:16
+poder ejecutar un
+16:18
+jcl volveremos y veremos lo último que
+16:23
+es el de
+16:26
+Messenger y
+16:29
+donde nos dice que hay
+16:33
+un una
+16:35
+indefinición una falta de identificación
+16:39
+en un
+16:40
+campo Bueno vamos a ver qu cuál es el
+16:43
+problema decir yo lo tuve que buscar
+16:47
+mirando sentencia por
+16:50
+sentencia Qué
+16:53
+pasó que
+16:56
+acá vamos a editar ejecuta
+17:05
+Perdón me falta un asterisco en esta
+17:08
+sentencia la
+17:10
+sentencia comentada que tendría que
+17:12
+haberse comentado paso ejecución del
+17:16
+programa
+17:17
+H está errónea porque no tiene un
+17:22
+asterisco después del barra barra igual
+17:25
+él me dio un indicio ya en la edición
+17:29
+muy importante fíjense esto
+17:33
+eh yo acá tengo un comentario barra
+17:36
+barra asterisco y sale todo en este
+17:39
+color celeste no es así diferente del
+17:43
+verde cuando yo acá no pongo el
+17:46
+asterisco la primer palabra que me
+17:49
+reconoce es paso y se cree que es un una
+17:55
+una palabra de ejecución y por eso
+17:57
+encuentra el error
+17:59
+pero me la está marcando en verde
+18:02
+diciéndome que es una palabra de jcl y
+18:07
+después prosigue es Celeste es decir é
+18:11
+un indicio me vio me dio yo no lo supe
+18:14
+ver si
+18:18
+ahora Bueno lo vi a la tercera vez que
+18:21
+miré el yob la segunda no me acuerdo ya
+18:25
+directamente ponemos el asterisco
+18:28
+[Música]
+18:31
+hacemos Un
+18:34
+s salvado correctamente hacemos un
+18:39
+zoit dice que lo
+18:42
+ejecutó y dice que no tiene errores
+18:45
+Bueno ya saben cómo Buscar la salida y
+18:49
+de esta manera tan rudimentaria
+18:51
+terminamos de ver el tema de errores
+18:54
+Aunque aclarar que hay algunas
+18:56
+herramientas bastante más sofisticada
+18:59
+para encontrar este tipo de errores en
+19:01
+este momento nosotros estamos viendo zos
+19:05
+nativo
+
+Todos
+
+De la serie

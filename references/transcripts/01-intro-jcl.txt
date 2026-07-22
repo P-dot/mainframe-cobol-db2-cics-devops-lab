@@ -1,0 +1,712 @@
+
+Buscar en el vídeo
+0:01
+Hola hoy vamos a ver una intro a jcl a
+0:07
+control Language para
+0:10
+ya empezar pronto con las prácticas es
+0:13
+decir esto es solo una una introducción
+0:17
+para que se acostumbren con los términos
+0:19
+los parámetros Para qué sirve cada cosa
+0:22
+Para qué sirve cada sentencia hay que
+0:25
+saberlo Así que vamos a comenzar
+0:30
+esto yo sé que da mucho miedo Tengo
+0:33
+experiencia en cursos y todo y jcl se
+0:37
+puede decir que es una de las cosas más
+0:40
+resistidas por los alumnos Por
+0:44
+qué programa en jcl es fácil pero
+0:47
+enseñar y aprender es complicado es
+0:50
+decir comprender de qué se trata Este
+0:54
+lenguaje de comando es
+0:56
+complicado Hay que ser muy paciente
+1:00
+aprender jcl requiere tiempo y mucha
+1:03
+práctica lo que les puedo asegurar que
+1:07
+luego es fácil una vez que uno entendió
+1:11
+de qué se trata Cómo son las sentencias
+1:14
+Y dónde tengo poner los parámetros Y de
+1:17
+qué forma después se mecaniza de una
+1:20
+manera que empieza a ser fácil pero van
+1:24
+a encontrar un montón de programadores
+1:26
+que mandan a compilar su programas
+1:28
+ejecutar y no sabe jcl tienen plantillas
+1:34
+donde cambian los datos que corresponden
+1:37
+para en vez
+1:39
+de compilar y ejecutar el programa alta
+1:43
+de cliente usa el mismo yo para alta de
+1:48
+artículos cambian los parámetros
+1:50
+corresponde y ya está pero si le
+1:52
+preguntas bien en
+1:53
+esencia Qué significa cada cosa
+1:56
+muchísimos no lo saben y yo lo sé por
+1:58
+experiencia porque también program así
+2:01
+no me interesaba
+2:02
+jcl y tomaba plantillas que ya estaban
+2:06
+hechas las modificaba a veces sin saber
+2:09
+mucho lo que hacía y mandaba a compilar
+2:11
+mis
+2:12
+programas bueno
+2:15
+eh En este curso que es bastante
+2:19
+exigente lo puedo asegurar porque las
+2:22
+empresas que me piden este temario lo
+2:25
+consideran muy
+2:27
+completo vamos a compilar y ejecutar
+2:31
+programas cobol o c o lo que quieran que
+2:35
+sea lenguaje de Z de
+2:39
+IBM vamos a saber hacer operaciones
+2:42
+aritméticas comparar código ordenar
+2:46
+archivos sortearlos
+2:48
+filtrar datos de un
+2:50
+archivo formatear
+2:52
+archivos Unión de archivos eliminar
+2:56
+duplicado de archivo apareo cruce de
+2:59
+archivo
+3:00
+aparell control vamos a hacer control de
+3:03
+errores Vamos a aprender que es un
+3:06
+dataset y a
+3:07
+definirlos y vamos a saber lo que son
+3:11
+los archivos gdg que son archivos para
+3:15
+el control de
+3:16
+versiones más o menos todo lo que le
+3:18
+describí se puede hacer con un programa
+3:21
+bueno el tema es que todo esto se puede
+3:25
+hacer con jcl
+3:30
+Cómo armar un y cuáles son los
+3:33
+parámetros y se evita toda la
+3:36
+programación esto por supuesto es
+3:38
+exclusivo de y de
+3:40
+mf saber hacer esto implica que puedas
+3:44
+conseguir un trabajo llamado Job
+3:47
+streamer que es un armador de J Por
+3:50
+decirlo manera una persona especializada
+3:54
+y que sabe Cómo armar y para hacer todas
+3:58
+estas operaciones acá están cubiertas
+4:00
+todas las operaciones que se pueden
+4:02
+hacer
+4:03
+eh y podés conseguir trabajo como j
+4:06
+triner y no como programado cobol Bueno
+4:09
+si ya sabes programar al cobol y encima
+4:12
+sabes y armar yob a este nivel
+4:16
+programación
+4:19
+completa vamos a ver entonces un poco
+4:21
+los términos para ir acostumbrándonos a
+4:24
+ello no jcl es un lenguaje de comandos
+4:28
+que es parametrizable
+4:30
+que permite ejecutar programas bat por
+4:33
+lotes Recuerden que ya este concepto lo
+4:37
+vimos pero vamos a volver a repetir son
+4:40
+programas
+4:42
+B no son programas
+4:45
+interactivos un Job que es su trabajo
+4:49
+identifica a un proceso
+4:53
+B con este término es como vamos a
+4:57
+identificar el lanzamiento de proyecto
+5:00
+un J está compuesto de uno o más steps
+5:05
+en la jerga bueno tenemos que
+5:07
+acostumbrarnos a la palabra Job en vez
+5:09
+de trabajo la palabra Step que son pasos
+5:13
+pasos determinados eh de un
+5:16
+programa como por
+5:19
+ejemplo yo puedo tener un y para
+5:22
+compilar otro y para enlazar el programa
+5:25
+y otro y para ejecutarlo Pero puedo
+5:28
+tener un y que compile enlace Y ejecute
+5:32
+entonces tengo un Job con tres pasos
+5:35
+tres
+5:37
+Step la sentencia el sec identifica el
+5:41
+programa o el procedimiento que se va a
+5:43
+ejecutar es decir si yo
+5:46
+tengo tres pasos compilar enlazar y
+5:49
+ejecutar voy a tener tres
+5:53
+esx uno para cada tarea y dd identifica
+5:59
+los recursos que se asignan a ejemplo
+6:03
+por ejemplo
+6:07
+ficheros cada línea de un Job es llamada
+6:10
+c o tarjeta en español y debe comenzar
+6:14
+de la posición un Por qué se llama caro
+6:17
+tarjeta la van a escuchar mucho en la
+6:19
+jerga Aunque podían ser sentencia de gql
+6:23
+bueno porque Cuando comenzó este tema
+6:28
+de m esta los y como los programas se
+6:33
+leían desde tarjetas perforadas entonces
+6:36
+en la jerga quedó como car o tarjeta
+6:40
+cada sentencia que nosotros redactemos
+6:43
+para un y de
+6:48
+jcl una sentencia que tiene dos barras
+6:51
+inclinadas al
+6:54
+comienzo bueno dos barras
+6:56
+inclinadas es lo que Define que comienza
+6:59
+una sentencia
+7:01
+lopr dos barras inada comienza una
+7:03
+sentencia ya veremos qué tipo de
+7:05
+Sentencia dos barras inclin un asterisco
+7:09
+comentarios como cuando programamos y
+7:11
+dejamos comentarios esclarecedores y
+7:14
+documentos y documental en el programa
+7:18
+bueno dos barras un asterisco comentario
+7:22
+una barra en un asterisco es un
+7:23
+delimitador que ya vemos para qué sirve
+7:26
+pero más o menos la palabra ya teye y
+7:30
+dos barras solamente decir la sentencia
+7:33
+está vacía es el fin del
+7:37
+Job el fin de ese
+7:41
+trabajo vamos a ver generalidades de la
+7:44
+sentencia gq bueno la gran mayoría de
+7:47
+las
+7:48
+sentencias de un J comienza con la doble
+7:53
+barra
+7:54
+inclinada todo lo que se escriba después
+7:57
+de la columna 72 es es
+8:01
+igob después la con 72 podemos escribir
+8:05
+será tomado como un comentario pero para
+8:08
+la ejecución será totalmente
+8:11
+ignorado
+8:13
+todo comienza con la sentencia
+8:18
+J puede ser opcional Se lo comento pero
+8:22
+mejor que no mejor siempre ponerla pero
+8:25
+supónganse el caso de que un
+8:28
+programador compilar En este preciso
+8:31
+momento terminó de hacer un y En este
+8:33
+preciso momento un programa es bueno lo
+8:36
+ejecuta y después Ver resultado y no le
+8:39
+puso la tarjeta y Pero no es lo que
+8:43
+corresponde para documentar bien y para
+8:46
+que no haya problema hay que poner una
+8:49
+tarjeta y para identificar bien el
+8:52
+trabajo y después encontrar los
+8:55
+resultados que
+8:57
+buscamos todo en un un Job se debe
+9:00
+escribir en mayúscula
+9:04
+en configurado
+9:07
+ispf si quieres escribir un Job en
+9:10
+minúscula eh te lo va a forzar el
+9:13
+editora a mayúscula
+9:15
+eh todo Job debe tener como mínimo un
+9:20
+Step un paso una tarea a
+9:24
+realizar específica que se ejecuta por
+9:27
+medio de la sentencia
+9:30
+sx y todo paso debe incluir como mínimo
+9:35
+una definición de datos que es la
+9:37
+sentencia d d Data
+9:41
+defini el yob se dará por finalizado
+9:44
+cuando se encuentre una única línea
+9:47
+doble barra inclinada como ya comentamos
+9:51
+vacía Por ejemplo acá
+9:54
+tenemos sentencias básicas y resumidas
+9:58
+de de un
+10:00
+y donde a cada sentencia le faltan los
+10:03
+parámetros complementarla que es lo que
+10:06
+empezaremos a ver muy pronto ya en la
+10:09
+próxima clase pero por ejemplo barra
+10:13
+barra jobn barra barra Pepito es el
+10:17
+nombre del
+10:18
+y
+10:19
+el el Step El Paso tiene que tener un
+10:24
+nombre también es barra barra paso uno y
+10:28
+ex para
+10:30
+ejecutarlo y la Data definición también
+10:34
+tiene que tener un nombre HM por ejemplo
+10:37
+archivo
+10:38
+uno bueno ya vimos que barra barra
+10:42
+asterisco son comentarios Entonces como
+10:44
+son comentarios pueden ir minúscula
+10:46
+mayúscula caracteres especiales eso lo
+10:49
+verán cada uno como quiera documentar su
+10:53
+suyo una barra asterisco es un un fin de
+10:58
+flujo y las dos barras como vimos sola
+11:01
+vacía es el fin del
+11:05
+J entre las dos barras y los
+11:10
+Ne no debe haber espacio es decir los Ne
+11:14
+empiezan en la columna
+11:16
+tres los name no pueden tener más de
+11:19
+ocho
+11:21
+caracteres y hay palabras reservadas no
+11:25
+puedo usar cualquier palabra Acá hay una
+11:27
+serie bastante amplia de palabras
+11:30
+reservadas palabras reservadas por
+11:34
+ejemplo correspondiente a la sentencia
+11:39
+yo Por supuesto yo msg Class Class que
+11:45
+define la prioridad de ejecución de un
+11:48
+trabajo msg leil determina el nivel de
+11:52
+los mensajes Bueno este documento por
+11:54
+supuesto lo voy a dejar en la carpeta
+11:57
+compartida por los alumnos no no voy a
+11:59
+explicar Qué significa cada uno de estos
+12:03
+es la documentación para que sepa que
+12:05
+estas son palabras reservada y las vamos
+12:09
+a ver ya desde el próximo video una por
+12:12
+una cada vez que lo necesitamos es decir
+12:14
+la vamos ir aprendiendo con la práctica
+12:18
+alguna que quen maduro user especifica
+12:21
+la identificación del usuario que
+12:23
+ejecuta el trabajo la powerware cuando
+12:25
+se necesita una pw por un determinado
+12:27
+trabajo pero es una lista bastante
+12:29
+amplia porque estas son las que
+12:32
+corresponde a la sentencia
+12:35
+Job acá tenemos la que corresponden a la
+12:39
+sentencia
+12:40
+ex por supuesto ex pgm programa
+12:44
+procedimiento parámetros condiciones
+12:47
+región Time ya les digo que la vamos a
+12:50
+ir viendo a medida que la vayamos
+12:52
+necesitando porque ya al curso hay que
+12:56
+darle dinamismo de práctica pura
+13:00
+tenemos lo mismo palabra reservada para
+13:02
+las Data definition dd
+13:06
+dcn que especifica el nombre del dataset
+13:10
+el espacio asignado al dataset
+13:13
+bueno continúa la palabra reservada la
+13:17
+sentencia dd que son BB Perdón V para
+13:22
+español
+13:23
+eh No qué dije no D está bien eh
+13:30
+volumen lbel dat bueno y otras palabras
+13:34
+reservadas que se van a usar en el medio
+13:38
+de la escritura de un yo son include If
+13:42
+porque
+13:44
+tenemos sentencias
+13:48
+condicionales un
+13:53
+el en
+13:56
+resumen concepto básico para tener
+14:00
+el Job Define el inicio de un trabajo
+14:02
+especifica información como el nombre
+14:05
+del trabajo la clase del servicio la
+14:07
+prioridad y los recursos necesarios
+14:11
+el indica la ejecución de un programa o
+14:14
+procedimiento ya les dije que puede
+14:16
+haber varios Por qué Porque el J puede
+14:20
+tener varios pasos
+14:23
+yd Data defin defini Define datos de
+14:29
+entrada y salida de un programa
+14:31
+incluyendo la ubicación el formato y el
+14:33
+dispositivo donde está almacenado es
+14:36
+decir lo tiene que mapear
+14:39
+totalmente bueno los comentarios como ya
+14:42
+vimos barra barra
+14:44
+asterisco para mejorar la documentación
+14:47
+del J y elementos clave
+14:51
+del control los
+14:55
+identificadores son nombres
+14:58
+Únicos que se asignan a trabajo paso
+15:01
+procedimiento y conjunto de datos por
+15:04
+eso van a ver muchos nombres que son
+15:08
+codificación pura y dura
+15:11
+eh palabras clave palabras reservadas
+15:15
+bueno esto ya vemos operadores símbolos
+15:19
+que permiten realizar operaciones
+15:21
+lógicas y aritméticas las tenemos dentro
+15:23
+de J control y los parámetros que ya
+15:27
+vimos algunos
+15:29
+Cuál es hay que parametrizar por medio
+15:32
+de la lista de palabras
+15:35
+reservadas Bueno les vuelvo a decir
+15:38
+miren acá acá tenemos
+15:41
+un una parte una porción de de un Job y
+15:46
+acá tenemos en rojo parte de las
+15:48
+palabras que ya Estuvimos viendo Job sec
+15:52
+dd otro como yo les
+15:55
+dije como están codificados
+15:59
+Step 002 el Data definition que
+16:03
+pertenece al Step 001 como dd01 y acá
+16:08
+tenemos el d02 Y así sucesivamente tema
+16:12
+que vamos a ver no se
+16:14
+asusten en el próximo ví posiblemente
+16:17
+tampoco entiendan demasiado pero llega
+16:20
+un momento que hace clic lo entendemos Y
+16:24
+esto es mucho más fácil que aprender
+16:27
+cobol
+16:29
+o cualquier otro lenguaje porque mucha
+16:32
+lógica no van a tener que usar porque
+16:35
+son todos procesos
+16:37
+automatizado bueno llegamos al fin así
+16:41
+que el próximo video entramos en
+16:44
+práctica directamente a elaborar jcl
+
+Todos
+
+De la serie
+
+Cursos de COBOL, JCL CICS DB2, Legacy System
+
+Lecciones
+
+Presentaciones
+
+Aprendizaje
+
+Relacionados
+
+Para ti
+
+Subidas recientes
+
+Visto
+
+
+8:51
+Video 4 Clase 4 - Editor ISPF 2da Parte . #cobol #mainframe Hercules/Zos - Próximo Video: INTRO JCL
+Cursos de COBOL, JCL CICS DB2, Legacy System
+857 visualizaciones
+•
+hace 1 año
+Doblado automáticamente
+
+
+10:34
+¿Qué es COBOL y JCL?
+Ersono
+1 K visualizaciones
+•
+hace 2 años
+
+
+16:18
+video 6 CLASE 6 1RA Parte compilacion COBOL OK, ISPF. JCL. DATASET. SDSF.
+Cursos de COBOL, JCL CICS DB2, Legacy System
+1,3 K visualizaciones
+•
+hace 1 año
+Doblado automáticamente
+
+
+9:30
+¿Cómo utilizar este diario?
+JESSICA CERVANTES
+1 visualización
+•
+Emitido hace 35 minutos
+Nuevo
+
+
+25:45
+Video 2 Clase 2 - #cobol #mainframe conceptos generales,
+Cursos de COBOL, JCL CICS DB2, Legacy System
+1,7 K visualizaciones
+•
+hace 2 años
+
+
+1:02:30
+¿Cómo se lleva la muerte en tu país de origen? | Los Invasores
+RTVE Play
+628 visualizaciones
+•
+hace 1 mes
+
+
+19:03
