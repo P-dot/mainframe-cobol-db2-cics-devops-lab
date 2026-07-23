@@ -1,0 +1,13 @@
+Resumen operativo del vídeo de File Transfer:
+
+- El vídeo interrumpe temporalmente los condicionales JCL para explicar File Transfer.
+- File Transfer permite enviar archivos desde Windows a z/OS y recibir archivos desde z/OS a Windows.
+- La función se usa desde TSO READY, no dentro de ISPF.
+- El ejemplo del vídeo usa un archivo plano de datos con apellidos, nombres, ciudades e importes.
+- Regla importante: no usar tabuladores; usar líneas planas con espacios normales.
+- El caso PC -> z/OS se realiza con Send to host.
+- El caso z/OS -> PC se realiza con Receive from host.
+- Los errores de ruta pueden no dar diagnóstico claro; hay que revisar nombres, puntos, dos puntos, barras y existencia del archivo.
+- Adaptación del lab:
+  - PC: C:\CANAL_ZOS\ARCHI.txt
+  - z/OS: IBMUSER.COBOL.DATA(ARCHI)

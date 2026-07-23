@@ -1,0 +1,43 @@
+CLASE 7 - FILE TRANSFER TSO / PC / ZOS
+
+OBJETIVO:
+  Transferir archivos planos entre Windows y z/OS para preparar
+  entradas de datos que luego puedan ser procesadas por COBOL batch.
+
+ADAPTACION DEL VIDEO:
+  CURSO1.LIB.SOURCE(CONTA1) -> IBMUSER.COBOL.DATA(ARCHI)
+
+ESTRUCTURA DEL ENTORNO:
+  IBMUSER.COBOL.SRC   = fuentes COBOL
+  IBMUSER.COBOL.LOAD  = modulos ejecutables
+  IBMUSER.COBOL.DATA  = archivos de datos
+  IBMUSER.ML.JCL      = JCLs
+
+DATASET:
+  IBMUSER.COBOL.DATA
+  DSORG=PO
+  RECFM=FB
+  LRECL=43
+  BLKSIZE=430
+
+ARCHIVO WINDOWS:
+  C:\CANAL_ZOS\ARCHI.txt
+
+MIEMBRO ZOS:
+  IBMUSER.COBOL.DATA(ARCHI)
+
+SEND:
+  PC -> ZOS
+  Local File = C:\CANAL_ZOS\ARCHI.txt
+  Host File  = 'IBMUSER.COBOL.DATA(ARCHI)'
+
+RECEIVE:
+  ZOS -> PC
+  Host File  = 'IBMUSER.COBOL.DATA(ARCHI)'
+  Local File = C:\CANAL_ZOS\ARCHI_FROM_ZOS.txt
+
+REGLAS:
+  File Transfer se ejecuta desde TSO READY, no dentro de ISPF.
+  No usar tabuladores en archivos planos.
+  Usar Browse si hay dudas con la ruta local.
+  No confundir el prompt interno de wx3270 con CMD de Windows.
