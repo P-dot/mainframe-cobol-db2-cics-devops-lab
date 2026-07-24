@@ -1,0 +1,32 @@
+CLASE 8 - UTILITARIOS JCL CON ARCHIVOS
+
+OBJETIVO:
+  Practicar utilitarios clasicos de z/OS para verificar,
+  concatenar y ordenar archivos antes de usar COBOL con ficheros.
+
+DATASET:
+  IBMUSER.COBOL.FILE80
+  DSORG=PO
+  RECFM=FB
+  LRECL=80
+  BLKSIZE=800
+
+MIEMBROS:
+  CLIENTE1 = entrada 1
+  CLIENTE2 = entrada 2
+  CLIENTE3 = salida concatenada
+  CLIENTE  = salida ordenada
+
+JOBS:
+  CRFILE8  = crea IBMUSER.COBOL.FILE80
+  VERCLI1  = IDCAMS LISTCAT + IEBGENER para verificar CLIENTE1
+  CATCLI   = IEBGENER concatena CLIENTE1 + CLIENTE2 -> CLIENTE3
+  SORTCLI  = SORT ordena CLIENTE3 -> CLIENTE
+
+SORT:
+  SORT FIELDS=(8,12,CH,A)
+
+ERROR DOCUMENTADO:
+  ICE056A SORTOUT NOT DEFINED
+  Causa: se uso SORTIN dos veces.
+  Correccion: cambiar la segunda DD a SORTOUT.

@@ -1,0 +1,10 @@
+Resumen del vídeo 11:
+
+- Ejercicios prácticos con condicionales y utilitarios.
+- Archivos secuenciales de longitud fija de 80 caracteres.
+- CLIENTE1 y CLIENTE2 tienen datos.
+- CLIENTE3 y CLIENTE están inicialmente vacíos.
+- Primer job: IDCAMS LISTCAT + IEBGENER para verificar existencia/lectura.
+- Segundo job: IEBGENER concatena CLIENTE1 y CLIENTE2 en CLIENTE3.
+- Tercer job: SORT ordena CLIENTE3 y deja resultado en CLIENTE.
+- Los jobs se hacen separados para no complicar el primer ejercicio.
