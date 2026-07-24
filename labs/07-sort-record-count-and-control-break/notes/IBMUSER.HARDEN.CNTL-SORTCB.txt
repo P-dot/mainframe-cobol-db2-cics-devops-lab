@@ -1,0 +1,44 @@
+CLASE 9 - SORT: CONTAR REGISTROS Y CORTE DE CONTROL
+
+OBJETIVO:
+  Usar SORT para contar registros y sumarizar importes por apellido.
+
+ENTRADA:
+  IBMUSER.COBOL.FILE80(CLIENTE)
+  18 registros ordenados por apellido.
+
+SALIDA:
+  IBMUSER.COBOL.FILE80(CLISUM)
+  9 registros sumarizados.
+
+JOB 1:
+  IBMUSER.ML.JCL(CONTREC)
+
+SORT CONTROL:
+  OPTION COPY
+  OUTFIL REMOVECC,NODETAIL,
+         TRAILER1=('NUMERO DE REGISTROS: ',COUNT=(M11,LENGTH=8))
+
+RESULTADO:
+  NUMERO DE REGISTROS: 00000018
+
+JOB 2:
+  IBMUSER.ML.JCL(CORTECLI)
+
+SORT CONTROL:
+  SORT FIELDS=(8,12,CH,A)
+  SUM FIELDS=(36,8,ZD)
+  OUTREC FIELDS=(8,28,36,8)
+
+CAMPOS:
+  8,12,CH,A  = apellido
+  36,8,ZD    = importe
+  8,28       = apellido + nombre + ciudad
+  36,8       = importe sumarizado
+
+RESULTADO:
+  CLIENTE 18 registros -> CLISUM 9 registros
+
+LECCION:
+  En un corte de control hay que revisar el layout de salida.
+  Si se usa SUM FIELDS, evitar duplicar manualmente el campo sumarizado.
