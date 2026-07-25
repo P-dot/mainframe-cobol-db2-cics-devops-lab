@@ -1,0 +1,30 @@
+LAB 09 - DFSORT RECORD SELECTION
+
+OBJECTIVE:
+  Use DFSORT to select or omit records based on amount fields and format output records.
+
+INPUT:
+  IBMUSER.COBOL.FILE80(CLIENTE1)
+
+OUTPUT:
+  IBMUSER.COBOL.FILE80(CLI600)
+  IBMUSER.COBOL.FILE80(CLI399)
+
+JCL:
+  IBMUSER.ML.JCL(SEL600)
+  IBMUSER.ML.JCL(OMT400)
+
+SEL600:
+  SORT FIELDS=COPY
+  INCLUDE COND=(36,8,CH,LT,C'00000600')
+  OUTREC FIELDS=(DATE1,C' ',8,12,C' $',36,8)
+
+OMT400:
+  SORT FIELDS=COPY
+  OMIT COND=(36,8,CH,GE,C'00000400')
+  OUTREC FIELDS=(DATE,C' ',8,12,C' $',36,8)
+
+LESSON:
+  INCLUDE keeps records that match the condition.
+  OMIT excludes records that match the condition.
+  OUTREC builds a new output layout from selected fields and constants.
