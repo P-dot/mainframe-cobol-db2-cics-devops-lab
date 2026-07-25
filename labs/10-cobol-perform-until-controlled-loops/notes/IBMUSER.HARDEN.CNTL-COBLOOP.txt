@@ -1,0 +1,27 @@
+CLASE - COBOL CONTROLLED LOOP WITH PERFORM UNTIL
+
+OBJETIVO:
+  Crear un programa COBOL batch que repite un parrafo de proceso
+  un numero controlado de veces.
+
+FUENTE:
+  IBMUSER.COBOL.SRC(PARMLOP)
+
+JCL:
+  IBMUSER.ML.JCL(LOPALL)
+
+LOAD:
+  IBMUSER.COBOL.LOAD(PARMLOP)
+
+CONCEPTOS:
+  - Variable alfanumerica: PIC X(80)
+  - Variable numerica: PIC 9(02)
+  - Inicializacion: MOVE 0 TO W-CONTADOR
+  - Bucle controlado: PERFORM 2000-PROCESO UNTIL W-CONTADOR = 5
+  - Incremento: ADD 1 TO W-CONTADOR
+  - Entrada: SYSIN / ACCEPT
+  - Salida: SYSOUT / DISPLAY
+
+RIESGO OPERATIVO:
+  Si no se incrementa el contador, el bucle puede no finalizar
+  y SYSOUT puede crecer rapidamente en JES spool.
