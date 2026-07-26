@@ -1,0 +1,23 @@
+CLASE 19 - IDCAMS LISTCAT + CONDITIONAL IEBGENER MESSAGE
+
+OBJECTIVE:
+  Verify that IBMUSER.COBOL.FILE80 is cataloged and that member CLIENTE1 is readable.
+
+JCL:
+  IBMUSER.ML.JCL(VERCLIM)
+
+UTILITIES:
+  IDCAMS
+  IEBGENER
+
+FLOW:
+  CATCHK  - LISTCAT ENT('IBMUSER.COBOL.FILE80') ALL
+  READMBR - reads IBMUSER.COBOL.FILE80(CLIENTE1)
+  MSGOK   - emits a confirmation message when READMBR.RC = 0
+
+EXPECTED MESSAGE:
+  IBMUSER.COBOL.FILE80(CLIENTE1) EXISTE Y ES LEGIBLE
+
+LESSON:
+  Return codes can be used to control later job steps.
+  IF/THEN/ENDIF gives a readable conditional structure in JCL.
