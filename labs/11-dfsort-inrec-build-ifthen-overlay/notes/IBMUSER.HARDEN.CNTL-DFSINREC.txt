@@ -1,0 +1,30 @@
+LAB 11 - DFSORT INREC BUILD AND CONDITIONAL OVERLAY
+
+OBJECTIVE:
+  Use DFSORT to transform customer records without changing the input member.
+
+INPUT:
+  IBMUSER.COBOL.FILE80(CLIENTE1)
+
+OUTPUT:
+  IBMUSER.COBOL.FILE80(CLIINR)
+  IBMUSER.COBOL.FILE80(CLIFLG)
+
+JCL:
+  IBMUSER.ML.JCL(INREC1)
+  IBMUSER.ML.JCL(INREC2)
+
+DFSORT CONTROL STATEMENTS:
+  SORT FIELDS=(1,7,ZD,A)
+  INREC BUILD=(1,7,C' ',8,12,C'-$-',36,8,C' ',28,7,C'-',DATE1)
+
+  SORT FIELDS=(1,7,ZD,A)
+  INREC IFTHEN=(WHEN=(36,8,ZD,LT,400),OVERLAY=(47:C'MENOR')),
+        IFTHEN=(WHEN=NONE,OVERLAY=(47:C'MAYOR'))
+
+VALIDATION:
+  CLIINR shows reformatted records with date.
+  CLIFLG marks records as MENOR/MAYOR depending on amount.
+
+LESSON:
+  DFSORT can perform batch transformation and conditional annotation without COBOL.
