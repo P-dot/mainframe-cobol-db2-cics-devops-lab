@@ -1,0 +1,27 @@
+CLASE 17 - COBOL DESCENDING COUNTER LOOP
+
+OBJECTIVE:
+  Build and run a COBOL batch program using PERFORM UNTIL with a descending counter.
+
+SOURCE:
+  IBMUSER.COBOL.SRC(PARMDEC)
+
+JCL:
+  IBMUSER.ML.JCL(DCALL)
+
+LOAD:
+  IBMUSER.COBOL.LOAD(PARMDEC)
+
+KEY COBOL:
+  01 W-CONTADOR PIC 9(02).
+  MOVE 20 TO W-CONTADOR.
+  PERFORM 2000-PROCESO UNTIL W-CONTADOR < 15.
+  SUBTRACT 1 FROM W-CONTADOR.
+
+LESSON:
+  ADD uses TO.
+  SUBTRACT uses FROM.
+  Controlled loops require initialization, stop condition and counter update.
+
+VALIDATION:
+  SYSOUT displayed the start line and repeated SYSIN message lines.
