@@ -1,0 +1,25 @@
+CLASE 18 - COBOL PERFORM VARYING
+
+OBJECTIVE:
+  Build and run a COBOL batch program using PERFORM VARYING.
+
+SOURCE:
+  IBMUSER.COBOL.SRC(PARMVRY)
+
+JCL:
+  IBMUSER.ML.JCL(VRYALL)
+
+LOAD:
+  IBMUSER.COBOL.LOAD(PARMVRY)
+
+KEY COBOL:
+  PERFORM 2000-PROCESO
+     VARYING W-CONTADOR FROM 1 BY 1
+     UNTIL W-CONTADOR = 6.
+
+LESSON:
+  PERFORM VARYING embeds the counter initial value, increment and stop condition
+  inside the PERFORM statement.
+
+VALIDATION:
+  SYSOUT displayed one initialization line and five repeated message lines.
