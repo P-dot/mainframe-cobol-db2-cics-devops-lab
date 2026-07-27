@@ -1,0 +1,26 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PARMCTL.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  W-ENTRADA.
+           05 W-CTRL             PIC X.
+           05 W-TEXTO            PIC X(50).
+
+       PROCEDURE DIVISION.
+           PERFORM 1000-INICIO.
+           PERFORM 2000-PROCESO UNTIL W-CTRL = '%'.
+           PERFORM 3000-FIN.
+
+       1000-INICIO.
+           INITIALIZE W-ENTRADA.
+           DISPLAY 'INICIO DEL PROGRAMA PARMCTL'.
+           ACCEPT W-ENTRADA.
+
+       2000-PROCESO.
+           DISPLAY W-TEXTO.
+           ACCEPT W-ENTRADA.
+
+       3000-FIN.
+           DISPLAY 'FIN DEL PROGRAMA PARMCTL'.
+           STOP RUN.
