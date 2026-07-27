@@ -1,0 +1,19 @@
+CLASE 20 - IEFBR14 DATASET ALLOCATION
+
+OBJECTIVE:
+  Allocate and catalog a sequential fixed-block dataset.
+
+JCL:
+  IBMUSER.ML.JCL(CRNEW80)
+
+DATASET:
+  IBMUSER.COBOL.NEW80
+
+KEY DD:
+  DISP=(NEW,CATLG,DELETE)
+  UNIT=SYSDA
+  SPACE=(TRK,(1,1))
+  DCB=(DSORG=PS,RECFM=FB,LRECL=80,BLKSIZE=800)
+
+LESSON:
+  IEFBR14 is a dummy program; DD allocation does the dataset creation work.
