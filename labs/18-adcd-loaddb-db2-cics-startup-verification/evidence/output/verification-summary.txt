@@ -1,0 +1,16 @@
+ADCD LOADDB / DB2 / CICS verification summary
+
+Validated observations:
+
+- Active IPL profile: LOADDB
+- IPLPARM location: SYS1.IPLPARM on 0A82
+- IEASYS list: DB
+- IPL device: 0A80
+- DB2 address spaces visible: D9G1MSTR, D9G1IRLM, D9GDBM1, D9GDIST
+- CICS region visible: CICSA
+- DB2I primary option menu accessible
+- CICS welcome screen accessible
+
+Conclusion:
+
+The system is already in the DB2/CICS-capable LOADDB startup state. No CS/DI/DC/DB activation sequence was required for this lab.

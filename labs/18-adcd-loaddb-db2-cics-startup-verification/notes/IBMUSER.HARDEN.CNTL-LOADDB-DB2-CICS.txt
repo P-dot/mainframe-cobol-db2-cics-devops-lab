@@ -1,0 +1,24 @@
+LAB 18 - ADCD LOADDB STARTUP VERIFICATION FOR DB2 AND CICS
+
+OBJECTIVE:
+  Verify the current ADCD startup profile and confirm DB2/CICS availability safely.
+
+KEY FINDINGS:
+  USED LOADDB IN SYS1.IPLPARM ON 0A82
+  IEASYS LIST = DB
+  IPL DEVICE = 0A80
+
+DB2 EVIDENCE:
+  D9G1MSTR
+  D9G1IRLM
+  D9GDBM1
+  D9GDIST
+  DB2I primary option menu accessible
+
+CICS EVIDENCE:
+  CICSA visible
+  WELCOME TO CICS screen accessible
+
+LESSON:
+  Do not repeat cold-start IPL sequences when the system is already in the desired DB profile.
+  Verify first, then document.

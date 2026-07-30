@@ -1,0 +1,717 @@
+Hola muy buenas a todos y bienvenidos a un nuevo vídeo de My Friend Corner el vídeo de hoy versará sobre una petición
+0:13
+que han hecho varios usuarios respecto a profundizar en aspectos más técnicos del
+0:19
+sistema operativo o s390 o zos de mainframe en los cuales en vídeos
+0:25
+anteriores os expliqué Cómo podemos utilizar Hércules que es el emulador de mindfline por excelencia y los CDs
+0:32
+descargados de arcade.org del sistema operativo os-390
+0:37
+versión 2 Release 10 de hecho el application deberon ven CD que son un conjunto de CDs con los volúmenes del
+0:43
+sistema operativo y una documentación bastante completa para ponerse en marcha con el sistema Pero claro lo que hemos
+0:49
+hecho al final ha sido copiar esos volúmenes configurar y customizar nuestro fichero de configuración de
+0:56
+Hércules y hacer que Hércules arranque de esa manera y de hecho hacer que el sistema arranque bajo Hércules pero con
+1:03
+un perfil muy simple que viene a ser el del tso y poder tener pues así nuestros
+1:12
+terminales de acceso teseo normales y corrientes pero el adcd no solo es eso
+1:18
+tiene un montón de herramientas adicionales entre las que podemos destacar todos los compiladores que
+1:23
+vienen con el sistema pues entre ellos cobol obviamente también tiene este Java etcétera También tienes el serbios de
+1:29
+aplicaciones Wash el sistema de base de datos db2 Tenemos también el sistema transaccional cics Ims y una serie de
+1:37
+herramientas y utilities adicionales como si esto se tratara de una instalación mainframe real de una
+1:43
+entidad bancaria o de una compañía de seguros o de una empresa bursátil por tanto en este vídeo y haciendo caso a
+1:51
+los comentarios que hemos recibido por el vídeo ese de los del pasado vídeo de los 2000 suscriptores lo que voy a hacer
+1:57
+ahora es explicaros cómo arrancar un sistema db2 dentro de nuestro entorno
+2:04
+os-390 emulado Hércules y también como arrancar el transaccional zigs que es
+2:12
+podría decir que el sistema transaccional más utilizado en el planeta aunque le sigue de cerca Ims
+2:19
+como segundo entorno transaccional más utilizado Para ello el adcd viene con
+2:26
+una serie de parametrizaciones ya hechas en las que en lugar de tener que concatenar nosotros las derivas y
+2:34
+concatenar unas librerías de lpa concatenar la prog lalinks etcétera para
+2:40
+eso la gente de IBM que ha creado esta distribución adcd ya no se ha ahorrado
+2:46
+esa tarea y simplemente con leer un poco la documentación podemos ponerla en marcha sin más dilación
+2:52
+a este respecto si nos vamos al documento p390 r390 r390 integrated server
+3:01
+aquí aparece toda la información que necesitamos para poner en marcha nuestro sistema adcd y todas las aplicaciones
+3:10
+que queremos poner en marcha pero bueno como estamos hablando de un documento que tiene más de 300 páginas en este
+3:17
+vídeo os voy a ser simplificar un poquito la tarea y así poder poner en marcha en pocos minutos nuestro sistema
+3:23
+db2 y nuestro sistema zigs bien para ello lo que os tengo que dar es un poquito de teoría en un sistema
+3:29
+mainframe entre muchos parámetros de arranque existe uno que se llama el loadparm el load parrm es un parámetro
+3:36
+en el que vienen el disco iodf y el catálogo maestro donde están toda la
+3:42
+información y luego también en su interior tiene un parámetro que es digamos la el miembro load que debe
+3:49
+cargar ese miembro load que reside fuerzas es llamadosis 1.iplparm lo que hace es concatenar las
+3:58
+librerías de la parliff que necesitamos para arrancar los diferentes subsistemas vosotros ya conocéis una porque en el
+4:06
+primer vídeo que hicimos lanzamos el parámetro cs que era Cold Start que lo
+4:13
+que hacía era un arranque formateándolo y nos habilitaba un V Tam y un teseo
+4:19
+para poder entrar y jugar un poco con la máquina bien pues ese ese parámetro cs
+4:24
+dentro de la loadparm lo que realmente está apuntando era a un miembro llamado loas cs dentro de la ipl y ese y en el
+4:34
+interior de ese miembro lo que nos está diciendo es A qué catálogo apuntar Cuáles son los miembros de parambliff
+4:40
+que tenemos que utilizar y sobre todo Cuál es el parámetro el sisparm que
+4:45
+tenemos que utilizar en el arranque del my friend ese parámetro es hisparm es el que en nuestra par blip Hay un montón de
+4:53
+miembros Como por ejemplo la y Asís la prog la clock Hay un montón de miembros
+4:59
+Pero si por ejemplo creamos un miembro llamado y Asís cs lo que estamos
+5:06
+diciendole con el chisparm css es que me lea el miembro y asiste ese y haga una
+5:12
+configuración un perfil de configuración concreto para ese arranque si yo me creo
+5:18
+por ejemplo un loasparm00 lo que yo hago es crearme unload 00 y ese lo hace 00
+5:25
+con el sisparm00 me irá a arrancar la y así00 que puede tener unos parámetros
+5:31
+completamente distintos y esto Esta perfilería de parámetros es lo que nos
+5:36
+permite que en un mismo entorno podamos arrancar diferentes sus sistemas sin tener que meternos en de lleno en
+5:43
+configurar cada uno de los parámetros de la par blim ya que IBM lo ha hecho por
+5:48
+nosotros en esta distribución así que sin más aquí os voy a explicar un poquito poquito más adelante de este
+5:55
+documento nos dice por aquí están los volúmenes etcétera y hay una parte en la que nos dice los Aquí bueno como
+6:01
+arrancar como parar y aquí hay una serie de parámetros que nos dice dónde están las diferentes miembros de América aquí
+6:09
+está ipl parámetros a parlips esto es lo que realmente nos interesa conocer para
+6:14
+levantar el db2 y el zix como os he dicho antes cs lo que hace es
+6:21
+limpiar la linke pack área y no levanta ni debe 2 ni ningún módulo de Ims y hace
+6:26
+un callstar de gest2 que es nuestro su sistema de entrada de trabajos una vez hecho un colder podemos hacer
+6:33
+perfectamente un arranque normal y Acceder al tso y al resto de los
+6:39
+terminales etcétera Pero claro si un color de Start lo que hace siempre es un formateo de los volúmenes de spool del
+6:46
+G2 Y si yo quiero mantener mis trabajos de otras arrancadas en el spool y no
+6:54
+perderlos cada vez que agarran con la máquina entonces puedo utilizar el parámetro WS que lo que hace es
+7:00
+utiliza la plp asistente que se formateado aquí y hace un arranque en
+7:06
+caliente del gestos una arranque caliente lo único que hace es levantar el eje 2 sin tocar el spool Entonces todos los documentos y trabajos y jcl
+7:14
+que has ejecutado en el G2 anteriormente se sigue manteniendo por ejemplo creo
+7:19
+que habéis llegado a una conclusión conjunta Y es que yo la primera vez que
+7:25
+arranco un sistema o ese 390 adsd siempre tengo que arrancarlo con un
+7:31
+colestar nunca puede arrancar un Warner está porque si no por formateo la clpa ni los spools
+7:37
+me daría un montón de errores y la máquina no arrancaría Por lo tanto esto
+7:42
+lo ejecutas una vez la primera vez que arrancas y ya las siguientes veces puedes utilizar warmstart para los
+7:49
+arranques posteriores bien el siguiente parámetro es interesante porque es el di que lo que hace es formatear la cerepa
+7:56
+pero añade los módulos de db2 e Ims y
+8:02
+también hace un arranque en frío del G2 el siguiente parámetro es utilizar DC
+8:07
+que lo que hace es utiliza la plpa que ha sido formateada en el entorno di en
+8:13
+el arranque de y que tiene que ha sido creada con con la de ipl que nos ha incluido los módulos de dvdms y nos hace
+8:21
+un call Start del G2 o sea nos formatea el gestos y ya por último para hacer un
+8:26
+arranque ya diario en el que no quieres borrar ni el ges2 ni nada de nada utilizaríamos el arranque db que utiliza
+8:35
+la plp asistente y aquí no se arranca el db2 y el ges2 se arranca en forma
+8:41
+caliente es decir se hace un arranque caliente bien pues esto traducido a
+8:46
+Hércules y eso ya lo podemos cerrar Tenemos aquí yo aquí lo que he hecho ha sido crear varios parámetros y ponerles
+8:53
+una almohadilla para Como comentario Entonces ahora mismo tal y como tenemos nuestra nuestro fichero de configuración
+8:59
+de Hércules vamos a hacer un arranque con parámetros cs Cold Start que además lo he puesto yo
+9:06
+aquí para que para que me acuerde porque no va a estar siempre mirando el documento yo sugiero que hagáis lo mismo
+9:11
+así que sin más con esta configuración entramos aquí o ese 390
+9:21
+bien Aquí tengo para poner modo escape con la tecla escape para ver de una forma gráfica como tenemos nuestro
+9:26
+forador Hércules y voy a lanzar las consolas sna que van a las direcciones en este caso 700 701 702
+9:34
+etcétera entonces bueno como necesitamos la consola no sna para el arranque del
+9:39
+de la consola maestra pues lanzamos bien aquí tenemos la consola maestra
+9:45
+vamos a abrir una consola alternativa para tener nuestra primera
+9:50
+sesión de teseo Y bueno pues con esto ya tenemos lo suficiente para arrancar si nos vamos
+9:57
+aquí al escape y ponemos load veremos que está cargado el cs el code
+10:04
+Así que cuando hagamos ipl a esa instalación lo que nos va a hacer es lo que os he explicado antes formatear la
+10:10
+clpa y formatear el ges2 los volúmenes de spool del G2 y arrancar un tso
+10:16
+sencillito y un tcp sencillito y todo sencillito pero este paso lo tenemos que hacer
+10:23
+primero Así que nada hacemos aquí ahora mismo un load una l loas la tecla y que es el
+10:30
+disco residente y a veces comienza el arranque
+10:40
+veis aquí está formateando la clpa ya lo he hecho ya está arrancando el
+10:46
+chisplex y ahora ya está arranca la consola maestra de nuestro entorno
+11:00
+los mensajes de del proceso de arranque totalmente normales aquí a esta pregunta de los
+11:09
+comandos dinámicos respondemos con un Replay 2 reload y
+11:16
+eliminamos el problema bien mientras está arrancando os voy a
+11:22
+explicar una cosa que también se me ha olvidado deciros Y es que al igual que tenemos que andar tocando los parámetros
+11:28
+de la loadpam también necesitamos acceder a los diferentes perfiles de acceso al tso y me explico
+11:37
+tú cuando te lo veas ahora lo vamos a ver por ejemplo hacemos un ltso
+11:48
+nos pide el usuario Vamos a entrar con unirme user bien aquí metemos la password pero veis
+11:56
+que antes de darle al enter aquí tenemos el procedimiento de arranque que en este caso por concreto es ispf prok este
+12:02
+procedimiento arranque es un procedimiento de arranque muy sencillo que solo carga las librerías esenciales del
+12:08
+ispf para poder trabajar para poder cargar los menús como quien dice De hecho Vais a verlo si aquí entramos con
+12:15
+un enter veis se carga el ispf Pro
+12:20
+y aquí tenemos nuestro ispf bien el ispf Pro lo que nos permite es la modificación de los siguientes menús por
+12:28
+ejemplo en esta m de more veis que tenemos el smp el ismf el
+12:33
+Raquel para la seguridad el hcd para la configuración de Hardware el sdsf que es nuestro entorno del spool de hecho
+12:40
+entramos con un 5 para ver para que veáis que si ahora hago por ejemplo un St status Vais a ver que tenemos los Josh
+12:47
+en ejecución del G2 y nada más O sea no tenemos aquí trabajos ejecutados más que
+12:52
+estos tres que ha sido los de El arranque de ahora mismo y no tenemos nada aquí debajo por qué porque hemos
+12:57
+hecho un formateo de los spools del gestos aquí se puede comprobar que se ha hecho un call Start de hecho digo más si
+13:04
+hacemos un blog guiamos al enter y aquí f11 para mover la pantalla un poquito vamos a poner
+13:11
+esto en grande para que sea mejor veis que si hago un F7 hacia atrás
+13:17
+estos otros arranques del entorno y veis que en un momento determinado veis Aquí
+13:23
+está en este momento hemos lanzado el colestar del G2 que es precisamente el
+13:31
+parámetro codestar de los que hemos utilizado para arrancar
+13:36
+entonces aquí te está diciendo que está cogiendo el spool y que está en este sistema y te lo está formateando Y
+13:42
+entonces los checkpoint los formatea y formatea toda la información del gestos acá tenemos un gestos limpito limpito y
+13:49
+aquí con esto lo hemos comprobado hemos f8 aquí al final Estos son advertencias de seguridad ya que dice
+13:56
+que el Call de estar se ha completado Y a partir este momento es cuando ya se levantan los iniciadores y se levantan
+14:02
+todos los procesos Asociados del sistema bien pero sin irnos por las
+14:09
+ramas habéis visto que este menú tiene estas 11 opciones bien pues que sepáis
+14:15
+que existe otros menús que nos van a venir muy bien cuando arranquemos el db2
+14:20
+y el fix Como por ejemplo opciones de menú de administración del dp2 o el uso
+14:26
+del spuffy o el qmf que es el management facility o sea un montón de programas nuevos que aquí
+14:33
+ahora mismo no están por tanto lo que hay que hacer es cuando arranquemos con el sistema de b2 y el fix en lugar de
+14:39
+entrar con el procedimiento ispf Proc que habéis visto que está aquí el teseo logon ispf prop
+14:47
+lo que vamos a tener que hacer es arrancar con otro procedimiento que ahora os enseño si nos vamos a 3.4
+14:53
+podemos ver aquí en creo que si es
+14:58
+1.3sop creo que está aquí eso es está aquí y hacemos un browser podemos ver
+15:05
+que aquí tenemos 6 modelos de arranque nosotros estamos utilizando el ispf Pro
+15:10
+que lo que hace el spf prok realmente sí podéis comprobar que no es más que una concatenación de librerías para que
+15:18
+digamos las opciones del menú funcionen y llamen a las librerías adecuadas Bueno
+15:23
+pues entonces qué es lo que pasa que hay otro procedimiento de logón que adivina Cuál es pues este dbs prok este debe ser
+15:33
+es el que nos va a concatenar si miramos aquí con un browser es que nos va a concatenar
+15:40
+librerías Como por ejemplo las dsn que son de tv2 qmf que es el cuello manageme facility
+15:46
+es decir cosas que el otro no tenía por tanto cuando a partir de ahora
+15:53
+queráis que siempre que arranque la SD arranque el dv2 y el zigs recordar que
+15:58
+en el logo del tso tendréis que cambiar vuestro ispf prok por dbsprock
+16:05
+bien pues con esto comprobado vamos a salir de aquí hago
+16:15
+y minimizó esto porque vamos a parar la máquina y vamos a hacer un arranque de y
+16:20
+que es el arranque que nos ha sugerido el manual para cargar los módulos de db2
+16:28
+e Ims y además cargar formatear la clpa y dejar esos módulos cargaditos para
+16:33
+siempre así que bueno hacemos un Down
+16:38
+Y qué sistema vaya parando y me interesa está parando voy a ir cambiando esto iba a poner que arranque
+16:49
+con el parámetro de y salvo
+16:55
+de esta forma en el siguiente arranque que realicemos lo que vamos a hacer es cargar los módulos del db2 e Ims vale
+17:02
+acabado el subdown y ahora se nos queda con all ayelables complete en estos
+17:07
+momentos Entonces cuando podemos hacer un dólar pg2 para parar el G2
+17:14
+todos los iniciadores y una vez que tengamos el mensaje de que el gestos ha terminado
+17:22
+hacemos un zeod que es el
+17:29
+y hacemos un quiste
+17:34
+para para el procesador bien ahora tenemos el sistema parado yo
+17:40
+he cambiado aquí el procedimiento de arranque yo lo tengo porque para el Hércules para esta nueva configuración como al final lo que nos
+17:46
+está pidiendo es el loasparm la única que modificación es este loadpam yo puedo decirle al sistema dinámicamente
+17:52
+que me cambie lo Advance como pues si yo por ejemplo hago aquí un loasparm veo lo
+17:58
+que tiene Pues si hago un loasparm espacio 0 a 82
+18:07
+d y M1
+18:12
+Ya lo hemos cambiado Así que si ahora hago de nuevo ipl al disco ya arrancará en modo di es decir irá a la load y
+18:20
+cargará las Spark de Y eso moverá todos los módulos y instalar a todos los
+18:26
+módulos de db2 en el entorno Así que hacemos aquí o bien desde el entorno
+18:32
+gráfico la l de loas a la i que es el 0 a 80 o bien ya que estamos en el entorno
+18:38
+texto pues tenemos un ipl al 0 a 80 que es lo mismo
+18:45
+veis que aquí volverá a aparecer
+18:50
+veis que también se queda aquí un rato porque se está formateando en estos momentos la linkpad área y está
+18:56
+añadiendo los módulos de dm2 veréis como cuando arranquemos el modo warmstart esto lo hace en un segundo Por qué
+19:03
+Porque no se para formatear nada aquí nos aparece de nuevo los comandos
+19:08
+hacemos un Replay del 2 reload y que
+19:14
+recargue los comandos y ya quitamos ese mensajito Bueno pues ya arrancado el sistema Lo único es que solo tenemos los
+19:20
+módulos cargados no vamos a hacer nada más porque como ya se ha creado se ha
+19:27
+hecho un coldestad de los módulos de db2 y están cargados de memoria lo que vamos a hacer ahora entonces es parar la
+19:32
+máquina de nuevo con el resultado aún
+19:37
+y ya arrancaremos en modo DC que es un call the Start del db2 del cics y del G2
+19:45
+con todos los módulos plppa cargados previamente como siempre dorar peces 2
+19:56
+no tenemos blog ya y hacemos ahora un Z que pude ahora sería el mensaje
+20:04
+pues zeod y hacemos entonces un quiste con una u Ahí está Y esto no es para los
+20:13
+procesadores vale tercer arranque como hemos visto antes teníamos que irnos al
+20:18
+DC Así que si aquí tenemos hacemos un load
+20:24
+y le damos al enter vemos que tenemos en las partes y que es el que hemos puesto al principio el dni recordar era para
+20:31
+cargar las librerías de db2 en la clpa a partir de ahora no habrá que cargar nada
+20:36
+más así que vamos a hacer el arranque en frío del G2 y del db2 y solo nos quedará
+20:44
+un cuarto y último arranque que será el del arranque del dv que ya es con todo
+20:49
+cargado en warmstart con nuestro sexy db2 y todo levantado Así que lo mismo hacemos un load parr
+20:56
+0 a 82 de C de coldestad M1
+21:05
+enter y ahora hacemos de nuevo pues ipl al 0 a 80
+21:11
+y esto nos realizará de nuevo la ipl de la máquina
+21:19
+que sepáis que con el entorno DC ya os arranca también el db2 y el zigs Pero
+21:24
+siempre es un cablestar es decir si siempre arrancáis el modo DC os va a borrar todos los joys que habíais
+21:31
+ejecutado con anterioridad Entonces yo Generalmente lo que suelo hacer es
+21:36
+arrancó una única vez en DC y ya el resto de las veces me vengo aquí al fichero de configuración y aquí lo que
+21:42
+hago es dejar ya siempre cargado en modo debe aquí ya lo salvo y ya lo tengo para
+21:52
+siempre aquí de nuevo los comandos también
+21:57
+podéis poner simplemente un dos reload y osos carga solo hay que poner
+22:03
+Replay 0.2 es decir esta consola ya te coge te coge los comandos directamente
+22:11
+ojo en el MVS 3.8j tienes que poner Replay el número de respuesta coma y la
+22:17
+respuesta aquí ya no obviamente pasa muchos años entre uno y otro y veis aquí
+22:23
+ya os está diciendo ya está arrancando el dsn que es nuestra base de datos
+22:31
+y nos está diciendo que está escuchando al puerto 446 para las conexiones odbc o
+22:38
+jdbc que vayáis a hacer contra la base de datos este mensaje que aparece aquí solo
+22:44
+aparece en esta distribución es porque aquí no está configurado adecuadamente el wordblad manager Y entonces está
+22:51
+poniendo que el irlm que es el sistema de recursos de gestión de base de datos
+22:58
+tiene el mismo nivel de prioridad en la cpu que el propio que el ADN space del
+23:05
+db2 cuando el RM tendría que estar por encima Pero bueno para nuestro caso
+23:10
+patata no importa esto obviamente nuestra acción de producción pues se tendría que mirar pero en este caso Y
+23:16
+por último veis que está que aquí saliendo el arranque del cics en modo call the Start
+23:24
+así que bueno yo aquí si hago por ejemplo un ltso y en el usuario y BM user
+23:37
+y pongo el password veis que entró como siempre a los menús
+23:43
+Por ejemplo si me voy a m punto 5 que es el ssf si hago un estatus St podemos ver
+23:49
+aquí que además de los procedimientos normales están también los del db2 y la
+23:56
+región del zigs bien pero si yo salgo de aquí y voy a la versión m como habéis
+24:03
+podido comprobar esto sigue estando con el menú inicial por qué porque hemos entrado con él y spf Pro
+24:12
+pues lo que vamos a hacer es salir de aquí luego y vamos a entrar con el
+24:17
+procedimiento dbs prok que era que vimos en la teseo prok en el arranque inicial
+24:23
+que vimos hace un momento Entonces si no ltso y ponemos el usuario IBM user y ponemos
+24:31
+la contraseña aquí si hay que cambiar y poner dbs
+24:39
+prok y enter esto nos carga como os he dicho una
+24:46
+concatenación de librerías que ahora nos generarán nuevas opciones de menú a
+24:51
+saber opción m estas nuevas seis opciones adicionales que son las
+24:58
+que gestionan el debe2 la más utilizada obviamente la opción 15 que es el db2
+25:04
+administrador si vas aquí con un 15 podemos comprobar el entorno de b2 que tenemos que se
+25:10
+llama dsn1 estamos con el usuario de m user y aquí desde la opción 1 que es el
+25:15
+catálogo del db2 podemos ver los volúmenes que utiliza las por ejemplo las de databases y aquí no está diciendo
+25:22
+todas las bases de datos que están levantadas ahora mismo dentro de nuestro entorno de pruebas de nuestro entorno adcd y estas mismas base de datos son
+25:29
+las que pueden ser consultadas externamente por o de BC y trabajar
+25:35
+contra ellas como si fuera un dv2 real en un Host real en un entorno bancario o
+25:40
+empresarial pues esta es la digamos la forma de que tenemos de arrancar un dv2
+25:48
+De igual forma si yo salgo de aquí f3f3f3 2D dataset Temporal y hago un
+25:56
+logov y pongo
+26:02
+en grande para que lo veáis mejor l six estaríamos entrando en la región
+26:08
+del cics y este es nuestro transaccional con la tecla pause
+26:15
+salimos de la pantalla del banner inicial y podemos empezar a ejecutar transacciones por ejemplo la cmt y en
+26:23
+task de las tareas que tenemos activas y ahora obviamente solo tenemos la mía la
+26:28
+ahora mismo ya transacción en vuelo que es la que yo he lanzado es que es la cmt
+26:35
+De igual forma f3 con esto hemos acabado la transacción pause que quiero hacer
+26:42
+por ejemplo un cda de [Música] y Group Pues voy aquí aquí pues grupo
+26:51
+Quiero ver todos los grupos que tiene de transacciones El cis instalado por defecto que que habrán un montón Pues
+26:57
+porque como estamos hablando de que es un entorno de desarrollo Pues es lo que tiene entonces aquí decíamos a enter
+27:02
+podemos ver toda la cantidad de transacciones que hay y los grupos que tiene Entonces los programas son
+27:09
+programas en cobol del grupo ce ya es que tiene 1973 programas instalados en
+27:16
+este cis luego Aquí hay más grupos estas son trasats transacciones
+27:23
+sentir nuestras acciones programas particiones pantallas mapset que son
+27:31
+pantallas etcétera Pues bueno Esto es Y esto es lo que estoy trabajando ahora contra contra el sistema transaccional
+27:40
+en un futuro Os haré un vídeo de cómo crear programas en Six y poder trabajar
+27:46
+con ellos pero bueno eso será en otro vídeo bien sesión Ender
+27:51
+pause para blanquear la pantalla y si hacemos un csf luego
+28:00
+nos saca del cis y hemos salido el cis y agradecemos un ltso
+28:06
+podemos volver a entrar en el tso el user
+28:13
+con el ya veis que se guarda la el prok así que ya lo dejáis dejarlo así y así
+28:18
+ya siempre tendréis el deseo prok con las librerías concatenadas del d2 para
+28:24
+poder como podéis ver administrarlas con un 15 administramos
+28:30
+entramos en la herramienta de administración y lo que vamos a hacer con la opción Z que es System administration vamos a parar el dv2 de
+28:37
+forma ordenada porque vamos a parar la máquina y por último haremos el último arranque que es el dv que es el arranque
+28:43
+warmstart con todos los módulos de zigs y de b2 cargados y con el g62 sin que
+28:50
+tenga que formatear ningún spool pues vamos a la opción 2s que es Stop dd2
+28:56
+2 y hacemos un Force para parar no un
+29:01
+quiste sino un Force un quiste realmente paró la transaccionalidad de datos dejando los discos sin tocar pero el
+29:09
+dedo Sigue estando activo con un Force para la transaccionalidad de datos y cierro los address spaces del db2 Así
+29:16
+que hacemos un Force ya nos aparece que está parando aquí con f3 obviamente
+29:22
+hemos perdido la pantalla porque está parando es el db2 y volvemos a nuestro
+29:28
+ispf sin problemas y como podéis ver aquí ya veis que está preparándose estos
+29:34
+los mensajes de parado del db2 bien pues con esto y un bizcocho
+29:39
+Cerramos el dspf nos desbloqueamos y hacemos un
+29:45
+shutdown para parar la máquina y así ya hacemos un arranque en warmstart con
+29:52
+todos los módulos de db2 y cis cargados ya por defecto para que todos utilicéis Ya a partir de ese momento el arranque
+29:58
+de b y no tengáis que pasar por estos cuatro arranques que hemos tenido que hacer previamente para preparar el
+30:05
+entorno y que ya no haya ningún problema el zix hay que pararlo manualmente hacemos un cancel thicks a y esto
+30:13
+Cancela en la 3 space del cics y nos libera el espacio Así que en un ratito
+30:18
+aparecerá el famoso Hola bailable en funcións complete del gest 2 con lo que podremos hacer un dólar
+30:27
+y vamos a dejar que hasta que no salga el mensaje no vamos a dar al comando me
+30:33
+seguís no no parece ya veis que no es muy complicado y ha aparecido el mensaje Dolar pejes 2 mientras está parándose Ya
+30:41
+voy saliendo el mensaje zeod y cuando aparezca el g62 Entonces cuando lanzo El
+30:48
+Comando de zd o d Pues ahí está halte esas tres full Y por último
+30:54
+hacemos un quiste y con esto paramos las cpus y nos
+30:59
+aparece el famoso computer Muy bien pues por último ahora si queréis Cerramos el
+31:05
+Hércules y dado que en nuestro Hércules cnf ya
+31:12
+tenemos el loasparm con db lo leerá directamente del Hércules y no Tendremos que cambiar el loasparm como hemos hecho
+31:18
+manualmente dentro del Hércules para hacer todos estos arranques Así que nada
+31:23
+cerramos aquí esto lo minimizamos y lanzamos de nuevo el Hércules Ya lo
+31:29
+tenemos aquí vuelvo a maximizar la sesión y conecto
+31:35
+y conecto bien pues sea hacemos un
+31:40
+primero comprobamos que lo hace para no ha cogido bien y efectivamente Aquí está debe perfecto
+31:47
+Así que volvemos aquí y hacemos un arranque ipl d y el device y que es el primer disco
+31:55
+de residente y ahora esto ya sería el arranque habitual que tendréis que hacer para tener vuestro my friend con db2
+32:05
+cics y el gestos el modo Warner para que no os borre los trabajos que hayáis ido
+32:12
+ejecutando bien mientras carga ya veis lo que hemos hecho así a modo resumen primero hemos arrancado el Hércules en
+32:20
+modo Gold Start para que nos formatee el db2 y la lpa con esos datassets y esas agrupaciones
+32:26
+de memoria formateadas lo siguiente que hemos hecho ha sido un arranque de y para que
+32:33
+formatee la lpa y añada los módulos de db2 e Ims al entorno
+32:41
+luego hemos hecho un arranque DC para que formatee el spool del 2 formatee La clpa
+32:50
+con los módulos de db2 y MS y preparado
+32:56
+para el entorno zigs también y ya con eso si por ejemplo lo que queréis es que
+33:01
+siempre carranquéis el adcd con los módulos de tv2 y zigs activos pero
+33:07
+queréis que el gesto se formatee siempre para tener el sistema limpio como quien
+33:13
+dice entonces arrancar en modo de c pero yo lo que hago es arrancar el modo db
+33:20
+porque una vez que has arrancado una única vez en DC que es cuando te has formateado todo el entorno ya yo soy de
+33:27
+los que tiran de los Jobs que he ejecutado para regentarlos y ese tipo de cosas así que entonces yo os recomiendo
+33:34
+que hagáis estos cuatro pasos primero cs luego de y luego de c Y por último debe
+33:41
+y ya siempre podéis arrancar el modo de B como hemos arrancado ahora que ya tenemos el entorno preparado con el zigs
+33:48
+arrancado como veis aquí y el db2 arrancado Así que ahora hacemos un l fix
+33:55
+y entramos en nuestro six como os he enseñado aquí lo tenemos vamos algún csf
+34:02
+luego ya Os haré un vídeo con los comandos de
+34:09
+cics más utilizados de administración para que podáis en juguetear un poco con él y tal
+34:15
+Por otra parte hacemos un ltso para entrar al teseo del sistema metemos el usuario y BM user y aquí recordar además
+34:23
+de meter la contraseña que siempre siempre tenéis que arrancar con el
+34:28
+procedimiento dbsprock para que así podéis podáis acceder a esos menús de
+34:34
+administración de db2 que de la otra forma No aparece cómo pues vamos hacia la m de amor y
+34:41
+aquí tenéis las utilidades nuevas que han venido con el db2 por ejemplo podemos poner la opción 16 que es el
+34:47
+cuerpo facility y esto nos Abre una utilidad para manejar comandos de cueris que
+34:56
+vayamos a hacer f3 ahora por ejemplo podemos ir opción 13 y ver los productos
+35:02
+que tenemos dentro del debe2 Como por ejemplo el spuffy que es un generador de Procedimientos sql podemos generar
+35:09
+declaraciones de lenguaje sql preparar programas pero compilarlos crear
+35:15
+procedimientos almacenados bundear ejecutar tener comandos de db2
+35:21
+utilidades del sistema etcétera etcétera aquí con una x salimos
+35:27
+vamos de nuevo al m de amor y bueno lo que os digo la más utilizada la opción
+35:33
+15 porque con la opción 15 y aquí el entrando al catálogo del db2
+35:39
+podemos ver todo podemos ver los volúmenes que tiene activos que ahora mismo son estos podemos ver los storage
+35:45
+groups que tiene creado el db2 asignado esos volúmenes por otro lado podemos ver las tablas de las bases de datos que
+35:52
+tiene la máquina y podemos ver incluso las tablas vistas etcétera son todos son
+35:59
+tablas de cada una de las bases de datos por ejemplo están de New fonts y vamos
+36:05
+por aquí y ponemos una C de columnas podemos ver las columnas que tiene esa tabla Pues con sus barchas sus charts
+36:12
+etcétera y recordar el db2 hay que cerrarlo ordenadamente y no hacer
+36:18
+botonazo porque luego podrías tener problemas de incongruencias Así que para ello salimos aquí nos vamos a la z que
+36:24
+es db2 System administration y aquí paramos el db2 con la opción 2 s
+36:35
+y en modo force
+36:40
+y esto ya nos parará el entorno Si vemos la consola podremos ver perfectamente que el dv2 está parándose aquí Se puede
+36:48
+ver que está parando es el db2 y que en cualquier momento podemos también lanzarlo podemos hacer un creo que es
+36:54
+con guión si hago un guión Start db2
+37:02
+efectivamente con el recordar todo lo que empieza en esta instalación todo lo
+37:07
+que empiece con guión van a ser comandos de db2 de la misma forma que si todo lo
+37:13
+que empieza con un Dólar son comandos de ges2 Y sí ya veis que aquí se ha cerrado
+37:18
+pero yo por ejemplo de la misma forma habéis visto la administración del sistema como hemos podido cerrar desde los
+37:25
+comandos del ispf desde consola también puede hacer un guión stop dv2 que es el
+37:30
+mismo proceso veis que también está parando es el db2 desde la consola
+37:36
+Aunque Bueno ya os digo que por comodidad el ispf es hasta más bonito en
+37:41
+ese sentido de hecho si vais ahora mismo ponemos una m de amor y vamos a la
+37:46
+opción del db2 administración la opción 15 nos va a dar un error porque el dv2
+37:52
+está parado ves no parece nada por qué porque no encuentra el sistema db2 veis
+37:58
+que no aparece aquí por qué Pues porque está parado Así que esto ha sido todo en vídeos futuros nos meteremos un poco en
+38:05
+harina dentro del zigs y os explicaré comandos de sistema para ver un poco para que veáis la transaccionalidad del
+38:12
+entorno para que veáis cómo se administra básicamente un sistema de
+38:17
+transacción al cics etcétera también haré un vídeo a corto medio plazo explicando es como crear un
+38:24
+programa cobol que utilice pantallas de zigs y como darlas de alta en el zix Y
+38:31
+cómo generar una conversación entre el cix y nosotros utilizando pues una
+38:37
+pantalla de ejemplo creando nuestra propia transacción que es lo que se utiliza hoy en día en
+38:45
+entornos empresariales entornos bancarios bursátiles etcétera etcétera etcétera Así que esto ha sido todo si os
+38:53
+ha gustado el vídeo dale a me gusta o dado un súper fans para apoyarme económicamente date a la campanita para
+38:58
+que os avise Cuando suba nuevos vídeos aunque los que ya me conocéis sabéis que lo subo todos los viernes en la medida de lo posible suscribiros si no lo
+39:05
+habéis hecho ya porque Cuanto más seamos muchísimo mejor y además me ayuda a mantener el canal Y si tenéis alguna duda de la que queréis que hable el
+39:11
+futuros vídeos Y si obviamente está dentro de mis conocimientos dejadme en los comentarios ya veis que os hago caso
+39:17
+y os los contesto todos y sobre todo Muchísimas gracias por ver el vídeo hasta el final ya sea que es un
+39:23
+porque al final estamos hablando de mucho tiempo pero claro Es que esto no se explica en cinco minutos no os
+39:29
+puedo montar un entorno fix y db2 en un entorno mainframe pues es cosa de 5
+39:35
+minutos por lo tanto Muchísimas gracias por ver el vídeo hasta el final
+39:40
+así que sin más hasta el próximo vídeo de mainframe corner
