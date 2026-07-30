@@ -1,0 +1,18 @@
+Expected final 3270 screen
+==========================
+
+***************************************
+        LAB 19 - COBOL CICS BMS
+***************************************
+
+TANSACCION CICS EJECUTADA CORRECTAMENTE
+
+PROGRAMA COBOL: HOLA
+
+MAPSET BMS: HOLAMP
+
+PULSE CLEAR PARA VOLVER A CICS
+
+Note: The final executed evidence contains the text 'TANSACCION'.
+This is a display typo only; it does not affect the CICS/BMS execution chain.
+A corrected reference source is included as bms/HOLAMP-corrected-typo-reference.bms.

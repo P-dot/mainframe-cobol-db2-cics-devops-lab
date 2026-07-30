@@ -1,0 +1,19 @@
+HOLAMP   DFHMSD TYPE=&SYSPARM,MODE=INOUT,LANG=COBOL,             X
+               STORAGE=AUTO,CTRL=FREEKB,TIOAPFX=YES
+HOLAMP   DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+         DFHMDF POS=(3,20),LENGTH=40,ATTRB=(ASKIP,NORM),         X
+               INITIAL='***************************************'
+         DFHMDF POS=(5,20),LENGTH=40,ATTRB=(ASKIP,BRT),          X
+               INITIAL='        LAB 19 - COBOL CICS BMS'
+         DFHMDF POS=(7,20),LENGTH=40,ATTRB=(ASKIP,NORM),         X
+               INITIAL='***************************************'
+         DFHMDF POS=(10,18),LENGTH=44,ATTRB=(ASKIP,NORM),        X
+               INITIAL='TANSACCION CICS EJECUTADA CORRECTAMENTE'
+         DFHMDF POS=(12,25),LENGTH=30,ATTRB=(ASKIP,NORM),        X
+               INITIAL='PROGRAMA COBOL: HOLA'
+         DFHMDF POS=(14,25),LENGTH=30,ATTRB=(ASKIP,NORM),        X
+               INITIAL='MAPSET BMS: HOLAMP'
+         DFHMDF POS=(18,22),LENGTH=36,ATTRB=(ASKIP,NORM),        X
+               INITIAL='PULSE CLEAR PARA VOLVER A CICS'
+         DFHMSD TYPE=FINAL
+         END
