@@ -1,0 +1,44 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. PRUEBA3.
+
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+           SELECT FICHERO-ENT ASSIGN TO S-ENTRADA
+               ORGANIZATION IS SEQUENTIAL
+               ACCESS MODE IS SEQUENTIAL
+               FILE STATUS IS FS-ESTADO.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD  FICHERO-ENT
+           RECORDING MODE IS F
+           RECORD CONTAINS 50 CHARACTERS
+           DATA RECORD IS REG-ENTRADA.
+       01  REG-ENTRADA           PIC X(50).
+
+       WORKING-STORAGE SECTION.
+       01  FS-ESTADO             PIC XX VALUE '00'.
+
+       PROCEDURE DIVISION.
+           PERFORM 1000-INICIO.
+           PERFORM 2000-PROCESO UNTIL FS-ESTADO = '10'.
+           PERFORM 3000-FIN.
+           STOP RUN.
+
+       1000-INICIO.
+           OPEN INPUT FICHERO-ENT.
+           READ FICHERO-ENT
+               AT END
+                   MOVE '10' TO FS-ESTADO
+           END-READ.
+
+       2000-PROCESO.
+           DISPLAY REG-ENTRADA.
+           READ FICHERO-ENT
+               AT END
+                   MOVE '10' TO FS-ESTADO
+           END-READ.
+
+       3000-FIN.
+           CLOSE FICHERO-ENT.
