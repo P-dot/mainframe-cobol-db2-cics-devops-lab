@@ -1,0 +1,24 @@
+LAB21 - CICS PSEUDOCONVERSATIONAL BMS COMMAREA CEDF
+
+Objetivo:
+Demostrar un flujo CICS pseudoconversacional real con BMS, COBOL, COMMAREA y CEDF.
+
+Recursos:
+- MAPSET ALL2MP
+- PROGRAM ALL2
+- TRANSACTION ALL2
+- GROUP LAB21
+- LIBRARY LAB21LIB -> IBMUSER.CICS.LOAD
+
+Puntos clave:
+- EIBCALEN=0: primera invocacion.
+- RETURN TRANSID('ALL2') COMMAREA('ALL2CTX') LENGTH(8): termina la task y conserva contexto minimo.
+- EIBCALEN=8: reentrada tras RETURN.
+- RECEIVE MAP: CICS recibe datos del mapa.
+- MAPFAIL/EIBRESP=36: Enter sin datos modificados.
+- NORMAL/EIBRESP=0: ruta correcta con datos.
+
+Errores resueltos:
+- Continuacion BMS X en columna 72.
+- COND JCL con comas, no puntos.
+- PERFORM 8000-ENVIAR-MAPA con guion completo.

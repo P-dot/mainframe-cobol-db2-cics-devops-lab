@@ -1,0 +1,39 @@
+CEDF
+ALL2
+
+Expected CEDF evidence path:
+
+1. PROGRAM INITIATION
+   - EIBCALEN = 0
+   - first invocation, no previous COMMAREA
+
+2. EXEC CICS SEND MAP
+   - MAP('ALL2MP')
+   - MAPSET('ALL2MP')
+   - FROM(ALL2MPO)
+   - ERASE
+
+3. EXEC CICS RETURN
+   - TRANSID('ALL2')
+   - COMMAREA('ALL2CTX')
+   - LENGTH(8)
+
+4. PROGRAM INITIATION again
+   - COMMAREA = 'ALL2CTX'
+   - EIBCALEN = 8
+
+5. EXEC CICS RECEIVE MAP
+   - MAP('ALL2MP')
+   - INTO(ALL2MPI)
+
+6. MAPFAIL path
+   - RESPONSE: MAPFAIL
+   - EIBRESP = 36
+   - final message: NO ME HAGAS TRABAJAR EN BALDE
+
+7. NORMAL path
+   - user enters HOLA in CAMPO1
+   - response map shows:
+       CAMPO1: OK
+       CAMPO2: HOLA
+       MENSAJE: ESTOY PSEUDOCONVERSANDO DESDE CICS
