@@ -1,0 +1,16 @@
+Lab: 22-cics-db2-spufi-workbench-phase1-2
+Created: 2026-08-05
+Scope: Phase 1 and Phase 2 only
+
+Files:
+README.md
+jcl/CRDB2WK.jcl
+sql/SPU000-final-catalog-count.sql
+sql/SPU000-failed-tries-for-learning.sql
+notes/class-notes.md
+notes/commands.md
+notes/troubleshooting.md
+docs/source-notes.md
+evidence/raw/COBOL_DB2_CICS_phase1_2.docx
+evidence/screenshots/*.png
+ops/github-add-lab-commands.md
