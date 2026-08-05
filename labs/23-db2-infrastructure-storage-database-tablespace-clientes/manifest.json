@@ -1,0 +1,13 @@
+{
+  "lab": "23-db2-infrastructure-storage-database-tablespace-clientes",
+  "created_utc": "2026-08-05T19:06:58Z",
+  "stop_point": "Fase 5.2 completed; Fase 5.3 index by DNI pending",
+  "objects_created": [
+    "DB2LABSG",
+    "DB2LABDB",
+    "DB2LABTS",
+    "IBMUSER.CLIENTES"
+  ],
+  "evidence_images": 38,
+  "raw_evidence": "evidence/raw/FASE3-db2-infrastructure.docx"
+}
