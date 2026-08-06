@@ -1,0 +1,1204 @@
+
+Buscar en el vídeo
+0:04
+Hola muy buenas a todos y bienvenidos a
+0:07
+un nuevo vídeo de minframe Corner bueno
+0:09
+en el vídeo pasado os enseñe Cómo montar
+0:12
+el entorno completo db2 y Añadir datos a
+0:15
+una tabla concreta llamada clientes que
+0:18
+luego utilizaríamos en el fix y en
+0:19
+nuestro programa cobol para mediante una
+0:22
+transacción poder ver sus datos como el
+0:24
+vídeo era muy largo de explicar y muy y
+0:26
+bastante complicado lo que he hecho ha
+0:28
+sido partirlo en dos trozos para que el
+0:30
+primer trozo que ya lo viste la semana
+0:32
+pasada explicará cómo funcionaban el db2
+0:35
+y las herramientas de spufy de LG o
+0:38
+incluso el qmf para poder lanzar
+0:39
+instrucciones sql y crear las
+0:42
+estructuras necesarias de datos para
+0:44
+poder utilizar las a posteriori y en el
+0:46
+vídeo de hoy lo que voy a hacer es
+0:47
+explicaros Cómo
+0:49
+configurar el cix de forma que podamos
+0:52
+crear unas estructuras concretas en
+0:55
+nuestro entorno que conecten con el
+0:58
+entorno db2 y luego compilaremos nuestro
+1:01
+programa all 4 cambiando las
+1:03
+instrucciones
+1:04
+que trataban ficheros para crear
+1:08
+instrucciones sql para tratar ficheros
+1:11
+de bases de datos directamente qué es lo
+1:14
+que hoy en día se hace en el 99% de los
+1:17
+mindframes dicho esto necesitamos crear
+1:20
+tres estructuras dentro de nuestro
+1:22
+entorno para poder sacar partido al dv2
+1:26
+dicho esto hacemos aquí un pause y vamos
+1:29
+a crear nuestras estructuras utilizando
+1:31
+como ya os dije los grupos de toda la
+1:33
+vida si hay algún ceda display Group
+1:37
+asterisco
+1:41
+nos sale una lista de grupos entre los
+1:43
+que sabéis tenemos nuestro Hola old 2 y
+1:46
+ol-3 Para nuestras pruebas de pantalla y
+1:48
+en el all-3 concretamente el sistema de
+1:51
+ficheros vsam que si hacíamos ahora
+1:53
+mismo aquí un f3 con pausa al 3 llegamos
+1:58
+a esta pantalla que se poníamos aquí los
+2:00
+datos
+2:03
+pues salía esta información
+2:05
+pues vamos a hacer lo mismo vamos a
+2:07
+crear un grupo llamado all 4 que
+2:10
+basándole ese proceso o el 3 le dotemos
+2:13
+de acceso a db2 por tanto lo primero que
+2:17
+voy a hacer es un ceda
+2:20
+Define
+2:22
+db2 con
+2:26
+aquí el db2 con pues lo voy a llamar
+2:30
+six dólar db2 del grupo pues vuelvo a
+2:36
+meter en el all 4 bien entre esas
+2:39
+diferentes opciones es muy importante
+2:40
+poner nuestra db2 y d porque es la base
+2:43
+de datos o mejor dicho el esquema de la
+2:46
+base de base de datos que vamos a
+2:48
+utilizar en esa instalación de adcd del
+2:50
+oes 390 versión
+2:52
+de nuestro sistema base de datos es DS
+2:56
+n1 esto lo vamos a dejar tal cual es
+3:00
+también tal cual
+3:02
+aquí en no en términos relativos a
+3:05
+ponerle que uno que no haya ninguna
+3:06
+relación por terminal en caso de que
+3:09
+tengamos un error que nos a vende no que
+3:11
+no se haga un error de estos Vamos a
+3:13
+continuar hacia abajo
+3:15
+vale aquí importante el tema de
+3:18
+accounting vamos a decir que sea TX y de
+3:23
+y el tipo de autentificación el usuario
+3:25
+IBM user y luego más abajo
+3:29
+tenemos nuestro out y de y el command
+3:34
+out y de esto vamos a dejar tal cual
+3:35
+también que sea IBM user
+3:40
+y con esto y dándole al enter ha creado
+3:44
+el grupo all 4 y ha definido
+3:47
+satisfactoriamente es importante sin más
+3:49
+en esta en esta transacción
+3:52
+definir únicamente que nuestros
+3:55
+autorizaciones sean IBM user y sobre
+3:57
+todo que nuestra dv2 sea la de sn1 Bueno
+4:03
+pues con esto hemos creado la primera
+4:05
+estructura que es la de b2 connection la
+4:08
+segunda estructura es la db2 entry la de
+4:11
+dos entry es
+4:13
+la entrada de nuestra transacción al dv2
+4:17
+utilizando lo que es el d2p plan Así que
+4:21
+vamos a crearla vamos aquí f3 y hago un
+4:26
+tv2
+4:29
+entre
+4:32
+y aquí como lo llamo Pues voy a llamarlo
+4:34
+también all 4 del grupo o el 4
+4:39
+y aquí como hemos visto antes TX y d
+4:43
+como a Counting Así que TX Y de
+4:47
+lo mismo IBM user
+4:54
+y de rollback Yes el plan aquí definimos
+4:57
+el plan que sería all 4p por poner un
+5:00
+nombre
+5:02
+privada alta ceras limit
+5:08
+el objeto de tener el db2 entre es por
+5:11
+este plan yo Generalmente suelo crear
+5:13
+por cada plan que vayamos a crear en db2
+5:16
+se crea una db2 sentry en el cix para
+5:18
+que ese grupo de transacciones que estén
+5:21
+dentro de ese grupo se puedan puedan
+5:23
+utilizar ese plan y ese acceso el plan
+5:25
+se generará lo llamaremos lo llamado all
+5:28
+4pl pero cuando toque compilar el
+5:30
+programa cobol y hacer el bidness entre
+5:34
+el db2 y el cobol es cuando le diremos
+5:36
+el nombre del plan que sea all 4p y así
+5:39
+lo pueda utilizar Así que dicho esto
+5:41
+nuestro debe dos entry está definido
+5:46
+y la última estructura que nos queda por
+5:49
+hacer es hacer un ceda Define del
+5:55
+db2 tran
+5:59
+de esta forma cuando el programa cobol
+6:03
+voy a llamar a la transacción de dv2
+6:05
+oportuna para recuperar datos de la
+6:07
+tabla utilizará esta estructura del cicx
+6:11
+para su uso interno aquí el dedo astral
+6:15
+lo voy a llamar al 4 trans el grupo o el
+6:20
+4
+6:24
+y la entry la transacción al 4
+6:28
+y la transis o el 4 así que enter
+6:33
+y con eso ya hemos definido nuestra
+6:35
+d2tram Así que si hacemos f3 aquí de
+6:39
+aquí a un pause y un ceda display Group
+6:46
+old 4
+6:48
+Esto es lo necesario para que nuestro
+6:51
+dv2 se pueda Conectar a las
+6:53
+transacciones hemos acabado aquí no
+6:55
+Ahora aquí tenemos que definir los mapas
+6:57
+tenemos que definir nuestra transacción
+6:59
+y nuestro programa bien pues dejando
+7:02
+esto aparcado vamos a hacer aquí un f3
+7:05
+volvemos a nuestro terminal Así que
+7:08
+113.4 vamos a irnos al m Corner y Aquí
+7:13
+vamos a nuestros
+7:18
+aquí Me he quedado el 4 map que os lo
+7:21
+voy a poner por encima Para que veáis
+7:22
+este es el mismo mapa de all-3 con los
+7:26
+mismos Campos el dni nombre apellidos
+7:28
+diciendo Exactamente igual lo único que
+7:31
+hemos añadido aquí es que he puesto un
+7:33
+campo adicional que pone consulta de
+7:35
+clientes con dv2 para diferenciar el
+7:37
+mapa de este del que era Dell 3 bien
+7:40
+pues para compilar el mapa es muy
+7:42
+sencillo ya sabéis venimos aquí nos
+7:45
+vamos al debe a nuestro jcl que está
+7:48
+aquí abajo
+7:51
+y aquí hay uno que es confirmar a hombro
+7:54
+View red aquí hago un change un dos tres
+7:59
+cuatro cinco seis x con all 4 MP y all
+8:06
+ya me ha cambiado todo donde tiene que
+8:08
+cambiarme y se agarró un suv
+8:13
+la compilado todo perfectamente ya tengo
+8:15
+el mapa Así que ahora que tengo el mapa
+8:18
+puedo perfectamente cambiar de ventana e
+8:21
+irme al six
+8:23
+y aquí hacer un ceda Define Map
+8:29
+all 4 Group 4
+8:35
+ya está definido perfecto
+8:37
+si ahora cojo y me hago un seda display
+8:41
+Group
+8:45
+all 4
+8:48
+ya veis que tengo el mapa y las
+8:51
+conexiones de v2 Bueno pues continuamos
+8:53
+ahora que tenemos el mapa qué es lo que
+8:56
+tenemos que hacer pues editar nuestro
+8:58
+código fuente de cobol que está aquí en
+9:01
+m
+9:03
+correr.cex.sorce aquí creado el all 4
+9:06
+Pues con un View
+9:09
+Y ese es el programa que me ha pasado
+9:11
+Luis con las modificaciones de mi all 3
+9:15
+que era que atacaba ficheros vesam con
+9:18
+este que es el 4 que ataca directamente
+9:20
+la tabla de base de datos entonces aquí
+9:22
+digamos el añadido una serie de
+9:24
+comentarios que bueno vamos a ir poco a
+9:26
+poco lo que lo de siempre el pro y de
+9:30
+all 4 es lo dejado tal cual aquí la
+9:34
+copia del mapa o la o el 4mp Esos son
+9:38
+los mensajes que tenemos de antes y esto
+9:40
+es lo que tenemos al principio que Luisa
+9:43
+ha comentado Porque mientras que antes
+9:45
+teníamos aquí cdni nombre apellido y
+9:48
+dirección ahora tenemos el cldnicl
+9:51
+nombre cl si recordáis en la en el vídeo
+9:54
+anterior cuando creamos la declaración
+9:56
+de variables entonces aquí si vamos a
+9:58
+file veis que ha añadido una serie de
+10:00
+datos que incluye la declaración de
+10:04
+variables llamada clientes esta
+10:06
+inclusión donde donde la coge la coge de
+10:09
+aquí porque hay que un f9
+10:15
+la coge de aquí de la mainframe Corner
+10:18
+de aquí de la dclejen correcta
+10:21
+concretamente de aquí Esto es lo que
+10:24
+coge esa instrucción luego también
+10:26
+instrucciones
+10:28
+de sql que bueno son una serie de El sql
+10:32
+fa es una librería que utiliza el cobol
+10:36
+para todas las instrucciones de
+10:37
+sql y las pueda interpretar y aquí los
+10:40
+campos de error de db2 los ha cambiado
+10:42
+que tenía yo de vs a los ha cambiado por
+10:45
+campos de error que puede dar el db2 En
+10:48
+caso de que falle algo por ejemplo que
+10:50
+no exista la tabla o que falle lo que
+10:52
+sea lo metido aquí
+10:54
+luego a partir de aquí esto es
+10:56
+Exactamente igual que tenía mi programa
+10:58
+en el proceso de división aquí se ha
+11:02
+hecho las modificaciones el ya no es un
+11:06
+six a prácticamente sql
+11:10
+se hace sql cualquier error sql continúe
+11:15
+en nexxek ese sql si hay un sql Warning
+11:18
+continuar y finalizamos el exe lanzamos
+11:22
+exe sql si no encuentro nada continuar
+11:25
+que digamos que son las modificaciones
+11:27
+de las excepciones que puede dar el db2
+11:29
+Y a partir de aquí esto también esto es
+11:31
+igual el famoso ivecal Este es el
+11:33
+convencional
+11:35
+aquí la recogía el mapa sería la
+11:37
+conocíais que hacía el recibe map aquí
+11:40
+evaluamos la respuesta también es la de
+11:42
+tolera la que tenía LoL 3 Exactamente
+11:44
+igual todo esto es Exactamente igual y
+11:46
+aquí es cuando ya se cambia porque ya no
+11:49
+hacemos un ex six read que hacíamos
+11:52
+antes ya nos dice vesam ahora se cambia
+11:55
+db2 entonces este read file ya no existe
+11:57
+Ahora hay que hacerlo así movemos el dni
+12:00
+a cl dni que era la declaración creada
+12:04
+antes con el dclejen y se hace enter 13
+12:07
+y de y se hace en el exe sql
+12:10
+seleccionando el dni nombre apellidos
+12:12
+dirección sobre los registros cl dni
+12:15
+nombre dirección desde la tabla clientes
+12:18
+donde el dni dni sea igual al cl dni si
+12:23
+el sql es cero es que ha encontrado el
+12:26
+registro Así que pone registro
+12:28
+encontrado al mensaje de abajo que
+12:30
+tenemos en el mapa y mueve los campos a
+12:34
+los campos del mapa si no hacemos un
+12:37
+fallo fichero
+12:39
+y continuamos y enviamos con un exmap
+12:42
+nuestro mapa a la pantalla Este es el
+12:45
+procedimiento de pseudo conversacional
+12:46
+que ya sabéis el mapa only etcétera
+12:50
+aquí el fallo de mapa es que hay aquí
+12:53
+esto es lo de siempre y fallo fichero
+12:56
+aquí es cuando cambia también aquí Claro
+12:58
+si la si la respuesta es de fechar es
+13:01
+phone estos solo sirve para V Sam aquí
+13:05
+lo que hay que hacer es que si el sql Es
+13:06
+mayor que 100 Entonces el cliente no
+13:09
+existe y mover espacios a esto Si no es
+13:13
+que puede haber un error de b2 entonces
+13:15
+hace un six un Envía un trace y va a
+13:21
+este procedimiento llamado g99 error de
+13:25
+b2 y con esto finaliza el Track el trace
+13:28
+aquí tenemos el fin pgm con su go back y
+13:32
+aquí tenemos este nuevo entorno este
+13:34
+nuevo procedimiento que sea que es
+13:37
+exclusivamente de db2
+13:39
+que es metes las trazas y mueves los
+13:43
+códigos de sql a esos diferentes Campos
+13:45
+para que de esa forma si tenemos un
+13:48
+avent desde la cdf o desde el debug del
+13:52
+Six podemos saber exactamente Cuál es el
+13:54
+error de b2 que está dando porque ahora
+13:56
+ya no solo depende el six que de errores
+13:58
+sino que el dedo también de sus errores
+14:00
+y de alguna forma los errores del dedo
+14:02
+se los tienes que pasar al fix para que
+14:04
+el usuario se entere de dónde está el
+14:06
+problema si el problema está en Six o el
+14:08
+programa está en db2 bien pues este es
+14:10
+el programa all 4 ya veis que es tocar
+14:13
+tres o cuatro procedimientos que
+14:16
+teníamos en el all 3 para convertir un
+14:19
+fuente cobol que ataca un vesan por un
+14:22
+fuente de un cobol que ataca al dv2
+14:26
+así que bueno dicho esto salimos aquí
+14:30
+y lo que vamos a hacer ahora es lanzar
+14:34
+procedimiento de Cowboy fix db2 que veis
+14:38
+aquí va a hacer un View
+14:40
+bien Este es un jcl muy parecido del de
+14:43
+compilación normal de cix pero se le
+14:45
+haya añadido una serie de cosas como por
+14:47
+ejemplo el precompilador del db2 Esto va
+14:50
+a meter una serie de parámetros para que
+14:52
+el propio programa cobol tenga embebido
+14:56
+todo el código objeto relacionado con el
+14:59
+interfaz dv2 six el Sí sí sería nuestro
+15:02
+surce que el pgm aquí es all 4 aquí
+15:06
+dejaría en el dvrm Live dejaría el plan
+15:09
+Bueno aquí coge las copies de los mapas
+15:11
+también veis que coge el DC LG que es la
+15:15
+declaración de variables que os he
+15:16
+enseñado antes coge el fuente y luego
+15:19
+los parámetros del propio cicx luego
+15:21
+esto lo compila esto traduce Este paso
+15:23
+de aquí cicx traduce el precompirador
+15:25
+del db2 a cobol y dejar sus resultados
+15:29
+en el dsnh out
+15:32
+aquí sabremos si ha ido bien o mal que
+15:34
+esté recordar que este Data set lo
+15:37
+teníamos lo hemos creado para saber si
+15:39
+durante la compilación Hay algún proceso
+15:41
+que haya dado un error y lo tenga hecho
+15:43
+consultar por otro lado Tenemos aquí el
+15:46
+compilador de cobol propiamente dicho
+15:47
+que utiliza todas las librerías de cobol
+15:50
+y las del Six para poder para poder
+15:52
+compilarlo aquí teníamos el source las
+15:56
+copies los mapas la generación del dcl y
+15:59
+todo eso
+16:01
+se lo pasa al siguiente paso que es
+16:03
+copia y linka el programa coge como
+16:06
+parámetro este miembro que es de fh y
+16:10
+Liz que ahora os enseño que es porque
+16:12
+este no viene por defecto en el entorno
+16:14
+Esto va a poner aquí en f2 en f9 para
+16:17
+cambiar de pantalla aquí en el m corre
+16:20
+el punto jcl
+16:23
+un browser
+16:25
+te dice DHL
+16:31
+únicamente hace que incluya la variable
+16:34
+dsn
+16:37
+que incluye la variable de sneclip luego
+16:40
+el copy link lo deja así Y por último
+16:43
+linkedita todo el entorno que escoge
+16:46
+coge el link editado con todos sus
+16:49
+parámetros las librerías de entorno de
+16:53
+cix de cobol de db2 etcétera etcétera
+16:57
+incluso tcp y una serie de modelos y
+17:02
+utiliza la copy link que ha dejado
+17:04
+anteriormente Y bueno pues y con el
+17:07
+loadset de los pasos anteriores hacer la
+17:10
+limpia editación y deja nuestro programa
+17:12
+producto nuestro programa objeto en m
+17:16
+corner.cix.load
+17:20
+y a por último aquí se hace el vince
+17:24
+Plant plan es cuya condiciones que no
+17:28
+hay apretado el dedo el paso de b2 que
+17:31
+no haya apretado el del paso del Six no
+17:33
+hay apretado la compilación de cobol no
+17:34
+haya petado la compilación del copy link
+17:38
+ni tampoco haya petado la liquiditación
+17:41
+si todo esto se cumple Entonces ejecuta
+17:43
+esto coge las librerías de db2 coge el
+17:50
+dm-lip que es el bit que se ha ejecutado
+17:54
+en El Paso anterior y lo deja todo en un
+17:57
+m correr punto dvw.bit es decir aquí se
+18:01
+ejecuta el plan es decir digamos que es
+18:04
+nuestro sistema de acceso de Google fix
+18:07
+al dv2 sería el bit plan así que bueno
+18:10
+hacemos un suv y a ver si compila
+18:19
+y acaba en cero perfecto esto significa
+18:22
+que ahora en m corren db2 de snh out
+18:26
+Tenemos que tener este o el 4 que es
+18:29
+nuestra traducción de nuestros de
+18:33
+nuestro programa cobol a dv2 ya veis que
+18:35
+aquí hay una serie de cosas que no
+18:37
+estaban en el puente este al final Esta
+18:39
+es la salida todo esto de aquí son
+18:41
+copies y son workings que se ha traído
+18:45
+de los prepiladores de cobol etcétera ya
+18:47
+veis que hay un montón Aquí están los
+18:50
+sqls que están traducidos aquí el sql de
+18:54
+lo que hace realmente el entorno es
+18:57
+decir este es nuestro fuente pero
+19:00
+sin copys con todo metido a saco veis no
+19:05
+y luego Aquí está lo que me interesa el
+19:07
+mq corre el punto de brm que está aquí
+19:10
+que este es nuestro plan Que obviamente
+19:13
+está está todo ya veis que está en
+19:17
+código tiene código máquina
+19:19
+y por otra parte Aquí está el vince que
+19:22
+también es el 4
+19:24
+que ese es el ya veis que el bind es ha
+19:28
+cogido el sistema de sn1 El plan lo ha
+19:31
+llamado all 4 plan el miembro es all 4
+19:35
+que es el drm Live lo ha reemplazado
+19:38
+etcétera etcétera Esto es lo que lo que
+19:41
+conecta bindea no sé conecta el dv2 con
+19:44
+el cix Así que dicho esto tenemos
+19:47
+nuestro programa preparado que nos falta
+19:50
+pues muy sencillo Añadir aquí el
+19:53
+programa y la transacción Así que salgo
+19:56
+de aquí y hago
+19:59
+un ceda Define Pro
+20:03
+all 4 en el grupo
+20:08
+o el 4
+20:11
+tal cual Define
+20:14
+muy bien Y ahora qué me falta
+20:18
+Pues un cera Define trans
+20:21
+all 4
+20:25
+Pro
+20:27
+o el 4 que usa el programa 4 del grupo
+20:31
+all 4
+20:35
+y full qué hacemos ahora pues muy
+20:39
+sencillo
+20:41
+si no hago un ceda display
+20:45
+o el 4
+20:47
+tenemos todo tenemos el mapa el programa
+20:51
+la transacción la conexión de db2 la
+20:53
+entrada al d2 y el plan y la transacción
+20:56
+Así que hacemos un install
+21:00
+todo instalado que nos falta por hacer
+21:02
+Añadir el all 4 a nuestras famosa lista
+21:06
+si yo aquí hago un ceda
+21:09
+display list m corner
+21:13
+está la ola old 2 y ol 3 hay que Añadir
+21:16
+una lista adicional Así que hago
+21:20
+un ceda add
+21:24
+4 en la lista
+21:28
+m corner
+21:35
+estupendo si ahora entonces hago un ceda
+21:39
+display
+21:43
+list
+21:46
+No hay ninguna No hay ninguna me da aquí
+21:50
+onzas me he equivocado es this list m
+21:53
+corner
+21:55
+al final efectivamente aquí tenemos la
+21:58
+ola o el 2 o el 3 y o el 4 bien pues que
+22:01
+nos falta por hacer Pues si nos vamos
+22:06
+al cmt
+22:07
+s Pro
+22:13
+Aquí hacemos una New copy
+22:17
+con lo que ha cargado nuestro código
+22:19
+objeto pero nos hace falta una cosa por
+22:23
+hacer antes y es que tenemos que parar
+22:25
+el six y editar nuestra ship para
+22:27
+decirle que el six tenga una db2 con Es
+22:31
+decir para conectar el cis Porque ahora
+22:32
+mismo este cicx está hemos definido toda
+22:35
+la estructuras de db2 pero ninguna se
+22:37
+puede conectar todavía el entorno Por
+22:39
+qué Porque en la configuración inicial
+22:41
+del arranque del cis No le hemos dicho
+22:43
+que use el db2cón para conectarse al dv2
+22:46
+siempre que arranque el cix Así que
+22:47
+hacemos aquí un
+22:49
+cmt performance Down inmediata
+22:55
+nos ha tirado el six vemos aquí que
+22:58
+efectivamente que la consola ha acabado
+23:00
+con el cix Pues ahora nos vamos a esta
+23:03
+ventana y vamos a editar con un 3.4
+23:05
+vamos a buscar por zics asterisco
+23:09
+nuestra sisin para añadirle una entrada
+23:13
+en la en el arranque para poner el
+23:16
+db2cón para ello hacemos aquí un browser
+23:19
+y aquí tenemos nuestra sip 1 así que
+23:23
+aquí hacemos un edit
+23:26
+y vamos a Añadir aquí
+23:28
+una instrucción adicional
+23:32
+que es
+23:33
+db2 con
+23:36
+igual a Yes coma
+23:44
+mejor si es db2 eso debe dos con igual a
+23:47
+Yes de esta forma cuando arranqué el six
+23:49
+arrancará el Driver que tenga el acceso
+23:52
+al dv2 y así x podrá digamos habilitar
+23:55
+las transacciones de db2 trance etc Así
+23:58
+que con esto y un bizcocho salimos de
+24:00
+aquí ahora sí volvemos a nuestro zix
+24:05
+hacemos un Start
+24:07
+y vemos a ver si en los mensajes de
+24:09
+arranque ha añadido también el dv2con
+24:17
+perfecto veis connecting to db2
+24:26
+System de sn1 pues tenemos ya conexión
+24:30
+con el dv2 por lo tanto Ahora sí yo
+24:33
+lanzo aquí un l six bien así que bueno
+24:38
+nada Ahora sí hacemos un all 4 tendría
+24:40
+que salirnos la transacción
+24:42
+completamente sin ningún problema
+24:46
+espera
+24:48
+hay una vez a pct esto es porque me he
+24:50
+equivocado a la hora de definir algo a
+24:53
+ver qué ha podido ser vamos a ver
+24:56
+vamos a hacer un ceda
+24:58
+display
+25:01
+all 4
+25:03
+y a ver qué
+25:05
+old 4 más está todo vale Ya sé que
+25:09
+ha pasado que esto no es el 4 es all 4
+25:12
+MP Así que nada me voy a cargar esto con
+25:15
+un delete
+25:17
+y lo que voy a hacer es
+25:21
+un ceda Define
+25:24
+mapa
+25:26
+all 4 mp
+25:29
+en el grupo
+25:31
+all 4
+25:34
+Y esa grasa si la ha definido muy bien
+25:38
+si hacemos ahora entonces un display
+25:41
+f3
+25:43
+ceda display Group o el 4
+25:46
+tenemos que tener aquí vale va a hacer
+25:49
+un install vale el resto ya está
+25:52
+instalado Así que se abre el principio
+25:53
+hago un all 4 debería ir a la primera
+25:56
+perfecto efectivamente aquí tenemos
+25:58
+nuestra consulta de clientes a db2 si
+26:01
+meto el dni 2
+26:05
+ha encontrado el registro porque esto
+26:07
+estaba en el db2 De hecho si yo ahora me
+26:10
+voy a la otra pantalla me voy al qmf
+26:18
+y aquí hago un f6 Square
+26:21
+y hago un
+26:22
+Select asterisco
+26:26
+from clientes
+26:31
+Y le doy al f2 me viene aquí
+26:34
+efectivamente urchill Arrieta my frien
+26:36
+Corner f11 Bilbao que es exactamente lo
+26:40
+que aparece aquí
+26:43
+si yo por ejemplo ahora Cambio el dni
+26:44
+pongo el uno tendría que aparecer Luis
+26:46
+Luis Martínez bajo el puente la
+26:49
+diferencia y veis que aquí la diferencia
+26:51
+es que si yo aquí le doy a f3 y pongo un
+26:54
+all 3 con el fichero V Sam y pongo
+26:59
+el 2 veis que es O sea veis que sale
+27:03
+Perico los palotes esto es el fichero V
+27:06
+Sam
+27:10
+pero si pongo all 4 y pongo el mismo dni
+27:14
+Este es el entorno de b2 la tabla
+27:18
+clientes es el entorno de b2 para que
+27:20
+veáis la diferencia Bueno pues esta es
+27:23
+la forma en la que se hace un programa
+27:24
+kobol fix db2 si me lo pedís puedo abrir
+27:28
+un Google Drive y dejaros la el jcl los
+27:33
+Fuentes y los spoofings para que
+27:36
+vosotros podáis replicar el programa y
+27:38
+tener una fuente de acceso para que así
+27:42
+podáis utilizarlo para transcribir los
+27:44
+programas y hacer vuestras pruebas
+27:46
+etcétera etcétera ya veis que ha sido un
+27:49
+poquito más complicado que crear
+27:50
+ficheros V Sam porque los v-sam no hay
+27:52
+que definirlos solo hay que definir el
+27:54
+file y ya está aquí hay que hacer los
+27:56
+beams el plan el dv2 con etcétera es
+27:59
+mucho más complejo a nivel de conexión
+28:01
+six pero ya veis que al final termina
+28:03
+funcionando perfectamente todo y de
+28:06
+hecho es la forma en la que hoy en día
+28:09
+el 95 de las aplicaciones tics que
+28:12
+corren en un my frame atacan las tablas
+28:14
+de db2 de esta forma que os he enseñado
+28:17
+Así que eso ha sido todo Espero que os
+28:20
+haya gustado el vídeo yo me he divertido
+28:21
+de lo lindo haciendo esto me ha costado
+28:23
+un montón también he tenido que pedir
+28:25
+sopitas muchas de San Luis Luis ahora va
+28:27
+a ir haciendo más vídeos de hecho me va
+28:30
+a ir pasando ya vídeos hechos en los que
+28:32
+yo los iré Colgando en el canal
+28:33
+directamente sobre cómo añadirle más
+28:37
+funcionalidades al six al cobol y sobre
+28:40
+todo para hacer un programa de altas
+28:41
+bajas y modificaciones veis que este
+28:44
+programa simplemente es un programa de
+28:45
+consulta si yo consulto meto un dni y me
+28:48
+salen los datos Pero la idea es hacer
+28:49
+este programa más grande para hacer un
+28:52
+sistema completo de altas bajas
+28:54
+modificaciones listados etcétera
+28:57
+utilizando cover this y db2 así que
+29:00
+esperar esos vídeos con mucha ansia yo
+29:03
+desde luego lo voy a hacer y nada si os
+29:06
+ha gustado el vídeo pues lo de siempre
+29:08
+dar a me gusta o dar un súper fans para
+29:10
+apoyar económicamente Dale la campanita
+29:12
+para que os avise Cuando suba nuevos
+29:13
+vídeos aunque los que ya me conocéis
+29:15
+sabéis que lo subo todos los viernes en
+29:16
+la medida que puedo suscribiros Si no lo
+29:18
+habéis hecho ya porque Cuantos más
+29:19
+seamos mucho mejor y además me ayuda a
+29:21
+mantener el canal Y si tenéis alguna
+29:22
+duda de la que queréis que hable futuros
+29:24
+vídeos Y si está dentro de mis
+29:26
+conocimientos obviamente dejadmela en
+29:28
+los comentarios ya veis que os hago caso
+29:29
+y os contesto a todos y sobre todo
+29:31
+Muchísimas gracias por ver el vídeo
+29:33
+hasta el final así que sin más hasta el
+29:36
+próximo vídeo de mindframe corner

@@ -1,0 +1,16 @@
+-- El batch original fallo por comillas desbalanceadas en la tercera sentencia.
+-- Se conserva como evidencia didactica del rollback.
+INSERT INTO IBMUSER.CLIENTES
+  (DNI, NOMBRE, APELLIDOS, DIRECCION)
+VALUES
+  ('12345678A', 'ANA', 'LOPEZ', 'MADRID');
+
+INSERT INTO IBMUSER.CLIENTES
+  (DNI, NOMBRE, APELLIDOS, DIRECCION)
+VALUES
+  ('23456789B', 'LUIS', 'MARTINEZ', 'TERUEL');
+
+INSERT INTO IBMUSER.CLIENTES
+  (DNI, NOMBRE, APELLIDOS, DIRECCION)
+VALUES
+  ('34567890C', 'HECTOR', 'OYO', 'MADRID');
