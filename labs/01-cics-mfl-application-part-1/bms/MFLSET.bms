@@ -1,0 +1,38 @@
+***********************************************************************
+* LAB 01 PART 1 - MFL BMS CHECKPOINT SOURCE
+*
+* z/OS member:
+*   IBMUSER.CICS.MAPS(MFLSET)
+*
+* IMPORTANT:
+* This repository copy records the logical source at the Part 1
+* checkpoint. The physical fixed-format continuation layout is still
+* under validation. Before the next SUBMIT, align continuation columns
+* with the proven IBMUSER.CICS.MAPS(L04MAPS) member.
+***********************************************************************
+MFLSET   DFHMSD TYPE=&SYSPARM,MODE=INOUT,LANG=COBOL,
+               STORAGE=AUTO,CTRL=(FREEKB,FRSET),TIOAPFX=YES
+MFLM     DFHMDI SIZE=(24,80),LINE=1,COLUMN=1
+         DFHMDF POS=(3,1),LENGTH=4,ATTRB=(ASKIP,NORM),
+               INITIAL='MFLM'
+TITLE    DFHMDF POS=(3,28),LENGTH=24,ATTRB=(ASKIP,NORM),
+               INITIAL='CUSTOMER MANAGEMENT MENU'
+         DFHMDF POS=(4,20),LENGTH=40,ATTRB=(ASKIP,NORM),
+               INITIAL='----------------------------------------'
+CUR1     DFHMDF POS=(7,31),LENGTH=18,ATTRB=(ASKIP,NORM),
+               INITIAL='1 CUSTOMER INQUIRY'
+CUR2     DFHMDF POS=(8,31),LENGTH=14,ATTRB=(ASKIP,NORM),
+               INITIAL='2 ADD CUSTOMER'
+CUR3     DFHMDF POS=(9,31),LENGTH=17,ATTRB=(ASKIP,NORM),
+               INITIAL='3 MODIFY CUSTOMER'
+CUR4     DFHMDF POS=(10,31),LENGTH=17,ATTRB=(ASKIP,NORM),
+               INITIAL='4 DELETE CUSTOMER'
+         DFHMDF POS=(13,20),LENGTH=7,ATTRB=(ASKIP,NORM),
+               INITIAL='OPTION:'
+OPC      DFHMDF POS=(13,27),LENGTH=1,ATTRB=(UNPROT,IC)
+         DFHMDF POS=(15,20),LENGTH=40,ATTRB=(ASKIP,NORM),
+               INITIAL='----------------------------------------'
+         DFHMDF POS=(23,2),LENGTH=7,ATTRB=(ASKIP,NORM),
+               INITIAL='F3=EXIT'
+         DFHMSD TYPE=FINAL
+         END
