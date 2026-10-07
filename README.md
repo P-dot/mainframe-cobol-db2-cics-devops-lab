@@ -1,3 +1,24 @@
+# COBOL · Db2 · CICS Integration Engineering
+
+> **Role in the portfolio:** cross-domain integration track connecting application code, batch execution, data services and transaction processing. This repository is not the canonical owner of COBOL, Db2 or CICS fundamentals; it proves how those domains work together.
+
+## Portfolio navigation
+
+| Layer | Canonical repository | Purpose |
+|---|---|---|
+| Portfolio portal | [P-dot](https://github.com/P-dot/P-dot) | Entry point, role paths and domain map |
+| Core platform | [z/OS ADCD Hercules Engineering](https://github.com/P-dot/zos-adcd-hercules-engineering-lab) | Architecture, operations and engineering control |
+| Batch | [JCL Labs](https://github.com/P-dot/JCL_LABS) | JCL/JES2 workload mechanics |
+| COBOL | [COBOL](https://github.com/P-dot/COBOL) | Language and application fundamentals |
+| Data | [Db2](https://github.com/P-dot/DB2-) · [VSAM](https://github.com/P-dot/vsam01) | Relational and record-oriented persistence |
+| Transactions | [CICS](https://github.com/P-dot/CICS) | Online transaction processing |
+| Automation | [REXX](https://github.com/P-dot/Rexx) | Operational and workflow automation |
+| Security | [RACF/SAF](https://github.com/P-dot/mainframe-racf-security-evidence) | Identity, authorization and trust boundaries |
+| Diagnostics | [Problem Determination](https://github.com/P-dot/zos-problem-determination-diagnostics) | Evidence, diagnosis and controlled recovery |
+
+**Navigation contract:** `Profile → Portal → Domain owner → exact lab/evidence → related integration track → Portfolio`.
+
+---
 # LAB — Administración COBOL/JCL en ADCD z/OS 1.11
 
 ## Objetivo
