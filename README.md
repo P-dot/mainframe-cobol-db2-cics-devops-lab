@@ -227,3 +227,14 @@ https://github.com/P-dot/zos-adcd-hercules-engineering-lab
 Build -> Execute -> Observe -> Diagnose -> Correct -> Validate -> Document
 ```
 
+
+
+---
+
+## z/OS Engineering Academy
+
+**Academy role:** Integration School — cross-domain application flows spanning batch, data and transactions.
+
+[Start the Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Course Catalog](https://github.com/P-dot/P-dot/blob/main/docs/COURSES.md) · [Curriculum Graph](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md) · [Cross-Domain Relationships](https://github.com/P-dot/P-dot/blob/main/docs/RELATIONSHIPS.md)
+
+> Learn the concept → execute the lab → interpret the evidence → understand the subsystem boundary → continue to the next connected course.
