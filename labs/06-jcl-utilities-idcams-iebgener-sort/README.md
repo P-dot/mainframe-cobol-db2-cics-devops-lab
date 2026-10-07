@@ -53,3 +53,12 @@ CLIENTE2 ┘
 - `SORTCLI` falló primero por `SORTOUT NOT DEFINED`.
 - `SORTCLI` corregido terminó con `CC 0000`.
 - `CLIENTE` quedó ordenado por apellido.
+
+
+---
+### Continue learning
+
+**Previous:** [05-file-transfer-pc-zos-data-preparation](../05-file-transfer-pc-zos-data-preparation/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [07-sort-record-count-and-control-break](../07-sort-record-count-and-control-break/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

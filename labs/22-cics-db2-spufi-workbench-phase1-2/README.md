@@ -167,3 +167,12 @@ Preparar compilación COBOL CICS Db2
 - IBM Db2 for z/OS - SQLCODE handling.
 - IBM Db2 for z/OS - DCLGEN.
 - Vídeo/transcripción de Mainframe Corner sobre entorno Db2 para futura transacción CICS/Db2.
+
+
+---
+### Continue learning
+
+**Previous:** [21-cics-pseudoconversational-bms-commarea-cedf](../21-cics-pseudoconversational-bms-commarea-cedf/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [23-db2-infrastructure-storage-database-tablespace-clientes](../23-db2-infrastructure-storage-database-tablespace-clientes/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

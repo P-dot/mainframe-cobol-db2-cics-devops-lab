@@ -74,3 +74,12 @@ The evidence shows:
 ## Operational note
 
 This lab intentionally keeps the loop controlled. In production-style batch work, a missing counter increment can create an uncontrolled loop, rapidly growing SYSOUT and consuming JES spool. The increment statement is therefore part of the functional control logic, not decorative code.
+
+
+---
+### Continue learning
+
+**Previous:** [09-dfsort-record-selection-include-omit](../09-dfsort-record-selection-include-omit/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [11-dfsort-inrec-build-ifthen-overlay](../11-dfsort-inrec-build-ifthen-overlay/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

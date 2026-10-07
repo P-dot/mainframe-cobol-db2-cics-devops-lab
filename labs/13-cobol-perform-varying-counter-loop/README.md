@@ -68,3 +68,12 @@ The captured evidence shows:
 ## Professional value
 
 This lab demonstrates a cleaner COBOL loop pattern where initialization and increment logic are embedded in `PERFORM VARYING`. It also reinforces the difference between source input (`COBOL.SYSIN`) and load output (`LKED.SYSLMOD`) in compile/link JCL.
+
+
+---
+### Continue learning
+
+**Previous:** [12-cobol-descending-counter-subtract-loop](../12-cobol-descending-counter-subtract-loop/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [14-idcams-listcat-conditional-iebgener-message](../14-idcams-listcat-conditional-iebgener-message/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

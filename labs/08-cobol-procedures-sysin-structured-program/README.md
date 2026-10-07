@@ -89,3 +89,12 @@ This lab shows a complete COBOL batch lifecycle:
 - Diagnosis of compile errors using COBOL compiler messages.
 
 It is a small lab, but it demonstrates the working pattern used in larger COBOL batch systems.
+
+
+---
+### Continue learning
+
+**Previous:** [07-sort-record-count-and-control-break](../07-sort-record-count-and-control-break/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [09-dfsort-record-selection-include-omit](../09-dfsort-record-selection-include-omit/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

@@ -59,3 +59,12 @@ Este lab demuestra una ruta completa de diagnóstico mainframe:
 ## Próxima sesión
 
 Continuar desde `docs/06-next-session-runbook.md`.
+
+
+---
+### Continue learning
+
+**Previous:** [24-db2-clientes-spufi-dclgen-foundation](../24-db2-clientes-spufi-dclgen-foundation/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [Choose the next Academy course](https://github.com/P-dot/P-dot/blob/main/docs/COURSES.md)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

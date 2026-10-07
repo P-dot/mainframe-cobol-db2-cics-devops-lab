@@ -70,3 +70,12 @@ The evidence shows:
 ## Professional value
 
 This lab shows a fundamental batch programming pattern: a controlled loop with an explicit initialization, stop condition and counter update. It also highlights a common COBOL syntax distinction: `ADD ... TO` versus `SUBTRACT ... FROM`.
+
+
+---
+### Continue learning
+
+**Previous:** [11-dfsort-inrec-build-ifthen-overlay](../11-dfsort-inrec-build-ifthen-overlay/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [13-cobol-perform-varying-counter-loop](../13-cobol-perform-varying-counter-loop/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

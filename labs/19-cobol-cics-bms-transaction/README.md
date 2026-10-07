@@ -87,3 +87,12 @@ Important evidence is stored under:
 
 - The final screen shows `TANSACCION` instead of `TRANSACCION`. That is only a text typo in the BMS map and does not affect the technical result. A corrected reference version is included in `bms/HOLAMP-corrected-typo-reference.bms`.
 - The evidence set intentionally keeps both failure and success screenshots. For this lab, the troubleshooting path is part of the learning value.
+
+
+---
+### Continue learning
+
+**Previous:** [18-adcd-loaddb-db2-cics-startup-verification](../18-adcd-loaddb-db2-cics-startup-verification/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [20-cobol-sequential-file-input](../20-cobol-sequential-file-input/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

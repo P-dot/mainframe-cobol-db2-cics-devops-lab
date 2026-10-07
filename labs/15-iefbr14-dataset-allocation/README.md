@@ -62,3 +62,12 @@ evidence/screenshots/
 ## Professional value
 
 This lab demonstrates a common z/OS administration pattern: allocating a dataset safely through JCL without touching system libraries. This is a foundational operation before using utilities such as `IEBGENER`, `SORT`, `IDCAMS` or COBOL batch programs.
+
+
+---
+### Continue learning
+
+**Previous:** [14-idcams-listcat-conditional-iebgener-message](../14-idcams-listcat-conditional-iebgener-message/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [16-cobol-multiline-sysin-sentinel-control](../16-cobol-multiline-sysin-sentinel-control/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

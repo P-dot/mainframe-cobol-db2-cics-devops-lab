@@ -440,3 +440,12 @@ labs/01-cics-mfl-application-part-1/
 ## Part of the z/OS Engineering Laboratory
 
 This lab belongs to the wider ADCD z/OS engineering portfolio and follows the same evidence-driven methodology used across the repository.
+
+
+---
+### Continue learning
+
+**Previous:** Course introduction  
+**Course:** [Course home](../../README.md)  
+**Next:** [05-file-transfer-pc-zos-data-preparation](../05-file-transfer-pc-zos-data-preparation/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

@@ -77,3 +77,12 @@ VAZQUEZ     MONICA  ALMERIA 00000956
 ## Nota de saneamiento
 
 No se incluyen capturas procedentes del vídeo ni el archivo de vídeo. Solo se incluyen evidencias técnicas generadas en el entorno z/OS del lab.
+
+
+---
+### Continue learning
+
+**Previous:** [06-jcl-utilities-idcams-iebgener-sort](../06-jcl-utilities-idcams-iebgener-sort/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [08-cobol-procedures-sysin-structured-program](../08-cobol-procedures-sysin-structured-program/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

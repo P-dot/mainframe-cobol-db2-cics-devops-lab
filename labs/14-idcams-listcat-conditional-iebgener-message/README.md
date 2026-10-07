@@ -70,3 +70,12 @@ evidence/output/expected-sysout.txt
 ## Professional value
 
 This lab shows a production-style JCL pattern: validate input availability, check return codes, and provide a clear message for an operator or reviewer. It is more robust than relying only on a final condition code because it confirms both catalog availability and member readability.
+
+
+---
+### Continue learning
+
+**Previous:** [13-cobol-perform-varying-counter-loop](../13-cobol-perform-varying-counter-loop/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [15-iefbr14-dataset-allocation](../15-iefbr14-dataset-allocation/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

@@ -124,3 +124,12 @@ The screenshot set intentionally preserves both mistakes and final success, beca
 - `MAPFAIL` is expected when the user presses Enter without modified map data.
 - In CEDF, several Enter presses may be required because Enter advances the debugger one command at a time; it does not always mean “submit user data”.
 - The BMS continuation `X` must be in column 72. This lab includes that as a documented troubleshooting item.
+
+
+---
+### Continue learning
+
+**Previous:** [20-cobol-sequential-file-input](../20-cobol-sequential-file-input/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [22-cics-db2-spufi-workbench-phase1-2](../22-cics-db2-spufi-workbench-phase1-2/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

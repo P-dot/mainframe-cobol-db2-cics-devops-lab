@@ -73,3 +73,12 @@ The lab evidence confirms:
 ## Professional value
 
 This lab shows a common batch-processing pattern: read a fixed-length input file, apply selection criteria, reformat the selected records and create a downstream file for another process.
+
+
+---
+### Continue learning
+
+**Previous:** [08-cobol-procedures-sysin-structured-program](../08-cobol-procedures-sysin-structured-program/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [10-cobol-perform-until-controlled-loops](../10-cobol-perform-until-controlled-loops/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

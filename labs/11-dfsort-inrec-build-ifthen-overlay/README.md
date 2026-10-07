@@ -89,3 +89,12 @@ The evidence shows:
 ## Professional value
 
 This lab demonstrates batch data engineering with DFSORT: sorting, transforming layouts, inserting literals, adding system date fields, and applying conditional record annotation without writing a COBOL program.
+
+
+---
+### Continue learning
+
+**Previous:** [10-cobol-perform-until-controlled-loops](../10-cobol-perform-until-controlled-loops/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [12-cobol-descending-counter-subtract-loop](../12-cobol-descending-counter-subtract-loop/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

@@ -112,3 +112,12 @@ evidence/raw/
 ```
 
 The debug screenshots are intentionally preserved because they show the real error path: `ASSIGN`, spelling, missing periods, and `FILE STATUS` literals.
+
+
+---
+### Continue learning
+
+**Previous:** [19-cobol-cics-bms-transaction](../19-cobol-cics-bms-transaction/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [21-cics-pseudoconversational-bms-commarea-cedf](../21-cics-pseudoconversational-bms-commarea-cedf/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

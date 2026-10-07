@@ -69,3 +69,12 @@ Evidence is included under `evidence/raw/BUCLE.docx`, `evidence/screenshots/`, a
 ## Professional value
 
 This lab demonstrates a common batch-processing pattern: data-driven looping. Instead of hardcoding the number of iterations inside COBOL, the JCL input stream controls how many records are processed.
+
+
+---
+### Continue learning
+
+**Previous:** [15-iefbr14-dataset-allocation](../15-iefbr14-dataset-allocation/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [17-cobol-inline-perform-times-nested-loops](../17-cobol-inline-perform-times-nested-loops/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)

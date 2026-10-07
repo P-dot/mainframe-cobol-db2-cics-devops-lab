@@ -52,3 +52,12 @@ The captured evidence shows:
 ## Professional value
 
 This lab demonstrates operational verification of a mainframe development subsystem stack. Instead of performing risky IPL profile changes, it confirms the current startup profile and validates DB2/CICS availability using normal z/OS operator and user interfaces.
+
+
+---
+### Continue learning
+
+**Previous:** [17-cobol-inline-perform-times-nested-loops](../17-cobol-inline-perform-times-nested-loops/)  
+**Course:** [Course home](../../README.md)  
+**Next:** [19-cobol-cics-bms-transaction](../19-cobol-cics-bms-transaction/)  
+**Academy:** [z/OS Engineering Academy](https://github.com/P-dot/P-dot/blob/main/docs/ACADEMY.md) · [Curriculum](https://github.com/P-dot/P-dot/blob/main/docs/CURRICULUM.md)
